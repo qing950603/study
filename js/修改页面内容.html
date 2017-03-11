@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body,html,button,input{
+		padding:0;
+		margin:0;
+	}
+		.box{
+			width:80%;
+			height:200px;
+			background:#484444;
+			border-radius:4px;
+			margin:0 auto;
+			position:relative;
+		}
+		.box .show p{
+			font-size:30px;
+			position:absolute;
+			top:48px;
+			left:30px;
+		}
+		@font-face {
+  font-family: 'iconfont';
+  src: url('fonts/iconfont.eot');
+  src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/iconfont.woff') format('woff'),
+  url('fonts/iconfont.ttf') format('truetype'),
+  url('fonts/iconfont.svg#iconfont') format('svg');
+}
+.show .iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  font-size:50px;
+  position:absolute;
+  top:70px;
+  right:20px;
+  cursor:pointer;
+}
+.box .edit input{
+	width:300px;
+	height:40px;
+	position: absolute;
+	top:64px;
+	left:30px;
+}
+.box .edit button{
+	width:80px;
+	height:40px;
+	background:orange;
+	border:none;
+	border-radius:3px;
+	
+}
+.box .edit{
+	display:none;
+}
+.box .edit .btn{
+	position: absolute;
+	top:70px;
+	right:20px;
+	
+}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="show">
+			<p id="ptext">三生三世，十里桃花</p>
+			<i class="iconfont" id="edit-btn">&#xe61e;</i>
+		</div>
+		<div class="edit">
+			<input type="text" id="edit-input">
+			<div class="btn">
+				<button id="save">保存</button>
+				<button id="esc">取消</button>
+			</div>
+		</div>
+	
+	</div>
+	<script>
+		function G(sId){
+			return document.getElementById(sId);
+		}
+		function GClass(sClass){
+			return document.getElementsByClassName(sClass);
+		}
+		window.onload = function(){
+			var editBtn = G('edit-btn');
+			var save = G('save');
+			var esc = G('esc');
+			var show = GClass('show')[0];
+			var edit = GClass('edit')[0];
+			var ptext = G('ptext');
+			var editinput = G('edit-input');
+			editBtn.onclick = function(){
+				show.style.display = 'none';
+				editinput.value = ptext.innerHTML;
+				edit.style.display = 'block';
+			}
+			esc.onclick = function(){ 
+				show.style.display = 'block';
+				edit.style.display = 'none';
+			}
+			save.onclick = function(){
+				var editInputValue = editinput.value;
+				ptext.innerHTML = editInputValue;
+				show.style.display = 'block';
+				edit.style.display = 'none';
+			}
+
+		}
+
+	</script>
+</body>
+</html>

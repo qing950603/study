@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width:800px;
+			height:500px;
+			border:1px solid red;
+			margin:0 auto;
+		}
+		.box h4{
+			float:left;
+		}
+		.box p{
+			width:30px;
+			height:30px;
+			background-color: pink;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 30px;
+			float:right;
+			margin-right:70px;
+			cursor:pointer;
+		}
+		.box h5{
+			width:300px;
+			height:200px;
+			background:#000;
+			border-radius:3px;
+			color:#fff;
+			float:right;
+			clear:both;
+			margin-right:70px;
+			display:none;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<h4>鼠标点击右侧“？”问号上查看效果</h4>
+		<p id="btn">?</p>
+		<h5 id="h5">3月10日上午，人民大会堂台湾厅人头攒动，数十家境内外媒体架起"长枪短炮"，将镜头聚焦在举行开放日的台湾省代表团。此次两会期间，台湾籍人大代表及政协委员围绕李克强总理所作的政府工作报告进行了审议和讨论。围绕两岸关系部分，台籍代表委员表示，报告除了重申"九二共识"、一个中国原则之外，更突出强调坚决反对和遏制"台独"分裂活动，绝对不允许任何人以任何形式、任何名义把台湾从祖国分裂出去。</h5>
+	</div>
+	<script>
+	// 1、onclick onmouseover 都兼容
+	// 2、addEventListener 标准浏览器，低版本ie不支持
+	// abtn.addEventListener('click',function(){}) 
+	// removeEventLIstener  解绑事件 配合使用
+		window.onload = function(){
+			var onoff=true;
+			var abtn = document.getElementById('btn');
+			var ah5 = document.getElementById('h5')
+			abtn.onclick = function(){
+				if(onoff){
+					ah5.style.display='block';
+					onoff=false;
+				}else{
+					ah5.style.display='none';
+					onoff=true;
+				}
+			}
+		}
+		// abtn.abtn.addEventListener('click',clickfn);
+		// function clickfn(){
+		// 	alert('click');
+		// 	abtn.removeEventLIstener('click',clickfn);解绑
+		// }
+	</script>
+</body>
+</html>

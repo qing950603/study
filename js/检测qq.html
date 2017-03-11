@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width:100%;
+			height:400px;
+			margin:0 auto;
+			background:pink;
+			padding-top:200px;
+		}
+		.box-content{
+			width:50%;
+			height:200px;
+			border:1px solid red;
+			margin:0 auto;
+			position: relative;
+
+		}
+		.box-content label{
+			font-size: 30px;
+			font-weight:bold;
+			position:absolute;
+			top:50px;
+			left:0;
+		}
+		.box-content input{
+			width:250px;
+			height:40px;
+			position: absolute;
+			top:50px;
+			right:100px;
+		}
+		.box-content button{
+			width:64px;
+			height:44px;
+			border:none;
+			position: absolute;
+			top:50px;
+			right:10px;
+			background:orange;
+			border-radius:3px;
+			color:#fff;
+			font-size:18px;
+		}
+		#warn-text{
+			position: absolute;
+			top:130px;
+			left:340px;
+			background:yellow;
+			border-radius:3px;
+			display: none;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box-content">
+			<label>请输入QQ号：</label>	
+			<input type="text" id="inputText">
+			<span id="warn-text">不能为空</span>
+			<button id="check-btn">检测</button>
+			
+		</div>
+	</div>
+	<script>
+		function G(sId){
+			return document.getElementById(sId);
+		}
+		function GClass(sClass){
+			return document.getElementsByClassName(sClass);
+		}
+	
+		window.onload = function(){
+			var inputText = G('inputText');
+			var checkBtn = G('check-btn');
+			var warn = G('warn-text');
+			//检测按钮点击事件
+				/**
+		 * [warn description]
+		 * @param  {[type]} sText [description]
+		 * @return {[type]}       [description]
+		 */
+		function warnTip(sText){
+			warn.innerHTML = sText;
+			warn.style.display = 'block';	
+		}
+			
+			checkBtn.onclick = function(){
+
+				var inputValue = inputText.value;
+				//判断输入值是否为空
+			
+				if(inputValue.length != 0){
+					//不为空
+					var changeNum = Number(inputValue);
+					//判断是否是数字
+					if(isNaN(changeNum) == true){
+						warnTip('请输入数字');	
+
+					}else {
+						if(parseInt(inputValue) != Number(inputValue)){
+							//判断是否为小数
+							warnTip('不能为小数');
+						
+						}else {
+							//判断表单中值得长度
+							if(inputValue.length >= 5 && inputValue.length <= 10 ){
+								warnTip('恭喜你');
+							}else{
+								warnTip('QQ号长度在5和10之间');
+							}
+						}
+					}
+					
+				}else{
+					//为空
+					warnTip('QQ号不能为空');	
+					
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>
