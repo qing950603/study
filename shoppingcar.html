@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小米购物车</title>
+	<style>
+		.wrap table tr td{
+			width:200px;height:50px;
+			background:red;
+
+		}
+		.wrap table tr td span{
+			width:60px;
+			height:60px;
+			text-align: center;
+			line-height:30px;
+			border:1px solid #ccc;
+			cursor:pointer;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<table>
+			<tr>
+				<td>商品名称</td>
+				<td>单价</td>
+				<td>数量</td>
+				<td>小计</td>
+			</tr>
+			<tr>
+				<td>折叠自行车</td>
+				<td ><label class="price">2999</label>元</td>
+				<td>
+					<span class="reduce">-</span>
+					<label class="num">1</label>
+					<span class="add">+</span>
+				</td>
+				<td><label class="zjprice">2999</label>元</td>
+			</tr>
+			<tr>
+				<td>行车记录仪</td>
+				<td><label class="price">349</label>元</td>
+				<td>
+					<span class="reduce">-</span>
+					<label class="num">1</label>
+					<span class="add">+</span>
+				</td>
+				<td><label class="zjprice">349</label>元</td>
+			</tr>
+			<tr>
+				<td>车载空气净化器</td>
+				<td><label class="price">449</label>元</td>
+				<td>
+					<span class="reduce">-</span>
+					<label class="num">1</label>
+					<span class="add">+</span>
+				</td>
+				<td><label class="zjprice">449</label>元</td>
+			</tr>
+			<tr>
+				<td>共<label id="much">3</label>件商品</td>
+				<td>合计</td>
+				<td><p><label id="total">3348</label>元</p></td>
+			</tr>
+
+		</table>
+
+	</div>
+
+	<script>
+
+	function G(sId){
+		return document.getElementById(sId);
+	}
+	function GClass(sClass){
+		return document.getElementsByClassName(sClass);
+	}
+
+
+	window.onload = function(){
+		var reduce = GClass('reduce');//获取-号
+		var add = GClass('add');//获取+号
+		var price = GClass('price');//获取单价
+		var num = GClass('num');//获取数量
+		var zjprice = GClass('zjprice');//获取小计
+		var much = G('much');//获取共多少件商品
+		var total = G('total');//获取总价
+		//共有多少钱
+		function allPrice(){
+            Price=0;
+            for(var i=0;i<price.length;i++){
+       
+                    Price += parseInt(zjprice[i].innerHTML);
+               
+            }
+            total.innerHTML=Price;
+        }
+        //共有多少商品
+        function allAmount(){
+            amount =0;
+            for(var i=0;i<price.length;i++){
+       
+                    amount += parseInt(num[i].innerHTML);
+               
+            }
+            much.innerHTML=amount;
+        }
+		for(var i = 0;i< add.length;i++){
+			//单击加号
+			 add[i].num= i;
+			 add[i].onclick = function(){
+			 	var m=this.num;			 	
+				var onum = Number(num[m].innerHTML);
+				var oprice = Number(price[m].innerHTML);
+				var ozjprice = Number(zjprice[m].innerHTML);
+
+				onum++;
+				num[m].innerHTML = onum;
+				ozjprice = onum * oprice;
+				zjprice[m].innerHTML = ozjprice;
+				allPrice();//调用总价
+				allAmount();//调用总量
+			
+			}
+			//单机减号并不让数量减少到小于0
+			 reduce[i].num= i;
+			reduce[i].addEventListener("click", myFunction);
+			function myFunction(){
+				var m=this.num;	
+				var onum = Number(num[m].innerHTML);
+				var oprice = Number(price[m].innerHTML);
+				var ozjprice = Number(zjprice[m].innerHTML);
+				onum--;
+				num[m].innerHTML = onum;
+				ozjprice = onum * oprice;
+				zjprice[m].innerHTML = ozjprice;
+				allPrice();//调用总价
+				allAmount();//调用总数量
+			
+
+				// 判断购买数量是否小于0
+				for(var i=0;i<reduce.length;i++){
+					if(onum <= 0){
+					reduce[i].removeEventListener('click',myFunction);
+					}
+				}
+
+				
+			}
+
+
+		}
+	}
+
+
+
+	</script>
+</body>
+</html>
