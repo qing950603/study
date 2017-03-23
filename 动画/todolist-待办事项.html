@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body,html,div,button,input,p,li,span,ul{
+			padding:0;
+			margin:0;
+		}
+		li{
+			list-style: none;
+		}
+		.wrap{
+			width:500px;
+			border:1px solid #ccc;
+			margin:0 auto;
+		}
+		.wrap .tit{
+			font-size: 50px;
+			text-align: center;
+			font-weight:bold;
+			font-family:"微软雅黑";
+			color:#f39fab;
+			margin-top:50px;
+			margin-bottom:50px;
+		}
+		.wrap input{
+			width:350px;
+			height:40px;
+			margin-left:8px;
+			border:none;
+			border-bottom:1px solid #ccc;
+			font-size:18px;
+			margin-bottom:22px;
+
+		}
+		.wrap #btn{
+			width:130px;
+			height:44px;
+			border:none;
+			font-size:20px;
+			color:#fff;
+			border-radius:4px;
+			background:#ea5f72;
+			cursor:pointer;
+		}
+		.msg-wrap{
+			width:500px;
+			height:60px;
+			border-top:1px solid #ccc;
+			line-height: 60px;
+			border-top:1px solid #ddd;
+			display:none;
+		}
+		.msg-wrap p{
+			font-size:22px;
+			float:left;
+			margin-left:22px;
+		}
+		.msg-wrap button{
+			width:60px;
+			height:28px;
+			border:none;
+			background:#e14f4f;
+			font-size:18px;
+			color:#fff;
+			border-radius:6px;
+			cursor:pointer;
+			float:right;
+			margin-top:18px;
+			margin-right:34px;
+		}
+
+		.complted{
+			text-decoration:line-through;
+			color:#8b8b8b;
+		}
+
+		#operate{
+			width:500px;
+			height:60px;
+			display:none;
+			border-top:1px solid #ddd;
+		}
+		#operate span{
+			float:left;
+			width:60px;
+			height:24px;
+			border:2px solid #fff;
+			cursor:pointer;
+			font-size:18px;
+			color:#777;
+			text-align: center;
+			line-height:24px;
+			margin-left:10px;
+			margin-top:16px;
+			border-radius:6px;
+
+			
+		}
+		#operate span:hover{
+			border:2px solid #f7ecec;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<p class="tit">Todos</p>
+		<input type="text" placeholder="请输入待办事项" id="msg">
+		<button id="btn">创建</button>
+		<ul id="list">
+			<!-- <li class="msg-wrap">
+				<p id="msg-font" class="complted">哈哈</p>
+				<button id="delBtn">删除</button>
+			</li> -->	
+		</ul>
+		<div id="operate">
+			<span id="all">所有</span>
+			<span id="pro">进行中</span>
+			<span id="finish">已完成</span>
+		</div>
+
+	</div>
+	<script>
+		function G(sId){
+			return document.getElementById(sId);
+		}
+		function GClass(sClass){
+			return document.getElementsByClassName(sClass);
+		}
+
+		window.onload = function(){
+			var all = G('all');
+			var pro = G('pro');
+			var finish = G('finish');
+			var obtn = G('btn');
+			var list = G('list');
+			var msgWraps = GClass('msg-wrap');
+			var msg = G('msg');
+			var compl = GClass('complted');
+			var operate = G('operate');
+			//创建按钮
+			obtn.onclick = function(){
+				//获取input文本框内容
+				var msgText = msg.value;
+				//如果input文本中有内容则输出
+				if(msgText.length != '' ){
+					//创建元素Li，p,button标签
+					var msgWrap = document.createElement('li');
+					msgWrap.className = 'msg-wrap';
+					var p = document.createElement('p');
+					var button = document.createElement('button');
+					//在按钮中显示删除
+					button.innerHTML = '删除';
+					//将input文本框中的内容给P标签中
+					p.innerHTML = msgText;
+					//将p,button的内容追加到Li标签中
+					msgWrap.appendChild(p);
+					msgWrap.appendChild(button);
+					//插入新的一条li标签放在前面
+					list.insertBefore(msgWrap,msgWraps[0]);
+					//将文本框内容清空
+					msg.value = '';
+					msgWrap.style.display = 'block';
+					operate.style.display = 'block';
+				}
+
+				//删除按钮
+				button.onclick = function(){
+					list.removeChild(msgWrap);
+				}
+				//删除线
+
+				var arrp = document.getElementsByTagName('p');
+					for(var i = 0; i < arrp.length;i++){
+						var onoff = true;
+						arrp[i].onclick = function(){
+							if(onoff){
+								this.className = 'complted';
+								onoff = false;
+							}else{
+								this.className = '';
+								onoff = true;
+							}	
+						}	
+					}
+
+				// function 
+
+				//所有按钮
+				all.onclick = function(){
+					var liEl = document.getElementsByTagName('li');
+					for(var i=0;i<liEl.length;i++){
+						liEl[i].style.display = 'block';
+					}
+
+				}
+
+				//进行中按钮
+				pro.onclick = function(){
+					var liEl = document.getElementsByTagName('li');
+					for(var i=0;i<liEl.length;i++){
+						liEl[i].style.display = 'block';
+					}	
+					var arr = document.getElementsByClassName('complted');
+					for(var i=0;i<arr.length;i++){
+						arr[i].parentNode.style.display = 'none';
+
+					}	
+				}
+
+				//已完成按钮
+				finish.onclick = function(){
+					var liEl = document.getElementsByTagName('li');
+
+					for(var i=0;i<liEl.length;i++){
+						liEl[i].style.display = 'none';
+					}	
+					var arr = document.getElementsByClassName('complted');
+					for(var i=0;i<arr.length;i++){
+
+						arr[i].parentNode.style.display = 'block';
+
+					}		
+				}
+
+		
+
+			}
+		}
+
+	</script>
+</body>
+</html>

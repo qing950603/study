@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+</head>
+<body>
+	<div class="box">
+		<button id="btn">添加</button>
+		<ul id="list">
+			<li>哈哈</li>
+			
+		</ul>
+		
+	</div>
+	<script>
+		window.onload  = function(){
+			var btn = document.getElementById('btn');
+			var list= document.getElementById('list');
+			// var link = document.querySelector('.link');
+			btn.onclick = function(){
+				//1.创建li 节点 <li></li>
+				var liEl = document.createElement('li');
+				//2.创建文本节点  李白
+				var text = document.createTextNode('李白');
+				//3.将文本插入到Li中<li>李白</li>
+				liEl.appendChild(text);
+				//向ul 中插入li
+				list.appendChild(liEl);
+			}
+
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<title>无缝滚动</title>
+	<style>
+	  a{text-decoration: none;}
+		.scroll-wraper{
+			position:relative;
+			width:1110px;
+			height:220px;
+			border:1px solid #ccc;
+			margin:0 auto;
+			margin-top:100px;
+			overflow:hidden;
+		}
+		#scroll-con{
+			position:absolute;
+			left:0;top:0;
+			width:2220px;
+			height:220px;
+		}
+		#scroll-con a{
+			float:left;
+			display: block;
+			width:220px;
+			height:220px;
+		}
+		#scrll-con a{
+			display: block;
+			width:220px;
+			height:220px;
+		}
+	</style>
+</head>
+<body>
+	<div class="scroll-wraper">
+		<div id="scroll-con">
+			<a href="#">
+				<img src="images/s-img1.png" />
+			</a>
+			<a href="#">
+				<img src="images/s-img2.png" />
+			</a>
+			<a href="#">
+				<img src="images/s-img3.png" />
+			</a>
+			<a href="#">
+				<img src="images/s-img4.png" />
+			</a>
+			<a href="#">
+				<img src="images/s-img5.png" />
+			</a>
+		
+		</div>
+	</div>
+
+<script>
+window.onload = function(){
+	var scrollCon = document.getElementById('scroll-con');
+  //复制元素内容
+  var allLink = scrollCon.innerHTML + scrollCon.innerHTML;
+ //设置滚动内容 为 10个 图片
+	scrollCon.innerHTML = allLink;
+	var timeId = null;
+	timeId = setInterval(function(){
+  //  当滚动内容正好是 一半的时候
+	// 说明滚动 5个元素
+		if(scrollCon.offsetLeft  <= -1100){
+      //立即 设置为初始位置
+			scrollCon.style.left = '0px';
+		}
+		// 根据offsetLeft值，不断改变 元素的位置
+		scrollCon.style.left = (
+			scrollCon.offsetLeft - 5) +　'px';
+	}, 30)
+}
+</script>
+</body>
+</html>

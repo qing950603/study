@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON</title>
+</head>
+<body>
+	<img id="movieImg" src="" alt="">
+	<p id="actor"></p>
+	<script>
+	window.onload = function(){
+		var movie = {
+				name:"三生三世",
+				actor:["杨幂","赵又廷","迪丽热巴","张彬彬"],
+				imgUrl : "images/ssss.png",
+				score:9,
+				year:"2017年",
+				country:"中国大陆",
+				type:"剧情/爱情"
+				}
+				//获取图片img元素
+				 var movieImg = document.getElementById('movieImg');
+				//设置图片src
+				movieImg.src = movie.imgUrl;
+				//给JSON对象添加属性director
+				movie.director = '林玉芬';
+			    console.log(movie.director);
+			    console.log(movie['country']);
+			    var actorEl = document.getElementById('actor');
+			    actorEl.innerHTML = actorStr
+			    var actorArr = movie.actor
+			    //var actorStr = '';
+			 //    for(var i = 0;i< actorArr.length;i++){
+				// 	actorStr = actorStr + actorArr[i] + '/';
+				// }
+				var actorStr = actorArr.join(',');
+			    var actorEl = document.getElementById('actor');
+			    actorEl.innerHTML = actorStr;
+			 for(attr in movie){
+			 	console.log("属性名" + attr);
+			 	console.log("属性" + movie[attr]);
+			 }
+			
+	}
+	</script>
+</body>
+</html>

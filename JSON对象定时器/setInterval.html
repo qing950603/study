@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h1 id="num">0</h1>
+<button id="btn">停止</button>
+<button id="start">开始</button>
+	<script>
+	window.onload = function(){
+		//开启间隔型定时器
+		var num = 0;
+		var anum = document.getElementById('num');
+		var abtn = document.getElementById('btn');
+		var astart = document.getElementById('start');
+		var timeId = null;//全局变量
+		 timeId = setInterval(function(){
+			num++;
+			anum.innerHTML = num;
+		},1000)
+		abtn.onclick = function(){
+			clearInterval(timeId);
+		}
+		astart.onclick = function(){
+			 timeId = setInterval(function(){
+			num++;
+			anum.innerHTML = num;
+		},1000)
+		}
+
+	}
+
+	</script>
+</body>
+</html>

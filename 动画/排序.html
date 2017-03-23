@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box{
+			width:500px;
+			height:50px;
+			border:1px solid blue;
+			overflow:hidden;
+			margin:0 auto;
+			margin-top:14px;
+		}
+		.box p{
+			color:blue;
+			float:left;
+
+		}
+		.box span{
+			color:blue;
+			float:right;
+			line-height:50px;
+			margin-right:50px;
+			cursor:pointer;
+		}
+
+	</style>
+</head>
+<body>
+<div id="list">
+	<div class="box">
+		<p>1.iPhone在台湾竟然这么好卖</p>
+		<span class="pre">▲</span>
+		<span class="next">▼</span>
+	</div>
+	<div class="box">
+		<p>2.iPhone在台湾竟然这么好卖</p>
+		<span class="pre">▲</span>
+		<span class="next">▼</span>
+	</div>
+	<div class="box">
+		<p>3.iPhone在台湾竟然这么好卖</p>
+		<span class="pre">▲</span>
+		<span class="next">▼</span>
+	</div>
+	<div class="box">
+		<p>4.iPhone在台湾竟然这么好卖</p>
+		<span class="pre">▲</span>
+		<span class="next">▼</span>
+	</div>
+	<div class="box">
+		<p>5.iPhone在台湾竟然这么好卖</p>
+		<span class="pre">▲</span>
+		<span class="next">▼</span>
+	</div>
+</div>
+	<script>
+		window.onload = function(){
+			var preEl = document.getElementsByClassName('pre');
+			var nextEl = document.getElementsByClassName('next');
+			var obox = document.getElementsByClassName('box');
+			var list = document.getElementById('list');
+			//给所有的 up 按钮绑定click时间
+			for(var i=0;i<preEl.length;i++){
+				preEl[i].onclick = function(){
+				//获得点击按钮的父元素li
+					var liEl = this.parentNode;
+					var prevLi = liEl.previousElementSibling;
+					if(prevLi == null){
+						return;
+					}
+					
+					console.log(prevLi);
+					list.insertBefore(liEl,prevLi);
+
+				}
+				nextEl[i].onclick = function(){
+					var liEl = this.parentNode;
+					var nextLi = liEl.nextElementSibling;
+					if(nextLi == null){
+						return;
+					}
+					list.insertBefore(nextLi,liEl);
+				}
+					 
+			}
+		}
+
+	</script>
+</body>
+</html>

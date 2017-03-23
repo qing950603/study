@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h1 id="num">0</h1>
+	<script>
+	window.onload = function(){
+		var num = 0;
+		var anum = document.getElementById('num');
+		var timeId = setInterval(function(){
+			
+			if(num<10){
+				num++;
+			anum.innerHTML = num;
+			}else{
+				clearInterval(timeId);
+			}
+		},1000)
+	}
+	</script>
+</body>
+</html>

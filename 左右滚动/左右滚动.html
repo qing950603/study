@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>左右滚动</title>
+	<style>
+		body,html,div,a,button,h3,img,ul,li{
+			padding:0;
+			margin:0;
+		}
+		a{
+			text-decoration: none;
+		}
+		li{
+			list-style: none;
+		}
+		.scroll-wraper{
+			width:1230px;
+			height:340px;
+			margin:0 auto;
+			position: relative;
+			overflow: hidden;
+		}
+		#scroll-con{
+			position: absolute;
+			top:0;left:0;
+			width:2460px;
+			height:340px;
+
+		}
+		.tit{
+			width:1230px;
+			height:40px;
+			margin:0 auto;
+			margin-top:100px;
+			line-height: 40px;
+		}
+		.tit h3{
+			font-size: 22px;
+			float:left;
+
+		}
+		.tit button{
+			width:36px;
+			height:28px;
+			font-size: 20px;
+			float:right;
+			margin-top:6px;
+			background:#fff;
+			border:2px solid #e0e0e0;
+			color:#b0b0b0;
+
+		}
+		.rainbow-item1,.rainbow-item6{border-top:1px solid #ffac13;}
+		.rainbow-item2,.rainbow-item7{border-top:1px solid #83c44e;}
+		.rainbow-item3,.rainbow-item8{border-top:1px solid #2196f3;}
+		.rainbow-item4,.rainbow-item9{border-top:1px solid #e53935;}
+		.rainbow-item5,.rainbow-item10{border-top:1px solid #00c0a5;}
+		ul li{
+			width:236px;
+			height:340px;
+			background:#fafafa;
+			float:left;
+			margin-right:12px;
+			text-align: center;
+		}
+		ul li:nth-child(5){margin-right:0;}
+		ul li:nth-child(10){margin-right:0;}
+		ul li a img{
+			width:160px;
+			height:160px;
+			margin-top:54px;
+		}
+		ul li h3 a{
+			color:#212121;
+			font-size: 12px;
+		}
+		ul li p{
+			color:#b0b0b0;
+			font-size: 14px;
+		}
+		ul li span{
+			color:#ff6709;
+		}
+
+	</style>
+</head>
+<body>
+		<div class="tit">
+			<h3>小米明星单品</h3>
+			<button id="next">></button><button id="pre"><</button>
+		</div>
+		<div class="scroll-wraper">
+			<ul id="scroll-con">
+				<li class = "rainbow-item1">
+					<a href="#"><img src="images/s-img1.png" /></a>
+					<h3 class="title"><a href="#">小米5s Plus</a></h3>
+					<p class="desc">5.7英寸大屏双摄手机，拍照黑科技</p>
+					<span class="price">2299元起</span>
+					
+				</li>
+				<li class = "rainbow-item2">
+					<a href="#"><img src="images/s-img2.png" /></a>
+					<h3 class="title"><a href="#">红米Note 4X</a></h3>
+					<p class="desc">4100mAh超长续航，骁龙625处理器</p>
+					<span class="price">999元</span>
+					
+				</li>
+				<li class = "rainbow-item3">
+					<a href="#"><img src="images/s-img3.png" /></a>
+					<h3 class="title"><a href="#">小米电视3s 48英寸</a></h3>
+					<p class="desc">原装液晶屏，金属机身</p>
+					<span class="price">2599元</span>
+					
+				</li>
+				<li class = "rainbow-item4">
+					<a href="#"><img src="images/s-img4.png" /></a>
+					<h3 class="title"><a href="#">小米笔记本</a></h3>
+					<p class="desc">更轻更薄，像杂志一样随身携带</p>
+					<span class="price">3499元起</span>
+					
+				</li>
+				<li class = "rainbow-item5">
+					<a href="#"><img src="images/s-img5.png" /></a>
+					<h3 class="title"><a href="#">小米移动电源2</a></h3>
+					<p class="desc">双向快充，高密度锂聚合物电芯</p>
+					<span class="price">79元</span>
+					
+				</li>
+				<!-- <ul id="scroll-con"> -->
+					<li class = "rainbow-item6">
+						<a href="#"><img src="images/s-img6.png" /></a>
+						<h3 class="title"><a href="#">小米手环 2</a></h3>
+						<p class="desc">OLED 显示屏幕，升级计步算法</p>
+						<span class="price">149元</span>
+					
+					</li>
+					<li class = "rainbow-item7">
+						<a href="#"><img src="images/s-img7.jpg" /></a>
+						<h3 class="title"><a href="#">米家 LED 智能台灯</a></h3>
+						<p class="desc">无可视频闪，亮度色温无级调节</p>
+						<span class="price">169元</span>
+						
+					</li>
+					<li class = "rainbow-item8">
+						<a href="#"><img src="images/s-img8.png" /></a>
+						<h3 class="title"><a href="#">米家iHealth血压计</a></h3>
+						<p class="desc">爸妈上手就会用的智能血压计</p>
+						<span class="price">399元</span>
+						
+					</li>
+					<li class = "rainbow-item9">
+						<a href="#"><img src="images/s-img9.png" /></a>
+						<h3 class="title"><a href="#">小米路由器3</a></h3>
+						<p class="desc">更快更强，不止四天线</p>
+						<span class="price">149元</span>
+						
+					</li>
+					<li class = "rainbow-item10">
+						<a href="#"><img src="images/s-img10.png" /></a>
+						<h3 class="title"><a href="#">小米活塞耳机 清新版</a></h3>
+						<p class="desc">铝合金音腔，第三代平衡阻尼系统</p>
+						<span class="price">29元</span>
+						
+					</li>
+
+				<!-- </ul> -->
+				
+		</ul>
+		
+		
+	</div>
+
+
+	<script>
+		function G(sId){
+			return document.getElementById(sId);
+		}
+		function GClass(sClass){
+			return document.getElementsByClassName(sClass);
+		}
+		window.onload = function(){
+			var scrollCon = G('scroll-con');
+			var pre = G('pre');
+			var next = G('next');
+			var AutoPlayObj = null;
+			
+			//复制元素内容
+		  	var allLink = scrollCon.innerHTML + scrollCon.innerHTML;
+			 //设置滚动内容 为 10个 图片
+			scrollCon.innerHTML = allLink;
+			
+
+			// 单击上一页
+			pre.addEventListener('click',clickFn);	
+			function　clickFn(){
+				var timeId = null;
+				timeId = setInterval(function(){
+				// 根据offsetLeft值，不断改变 元素的位置
+				scrollCon.style.left = (scrollCon.offsetLeft + 30) +　'px';
+			  	//  当滚动内容正好是 一半的时候
+				// 说明滚动 5个元素
+				if(scrollCon.offsetLeft  >=0){
+					clearInterval(timeId);
+			     //立即 设置为初始位置
+				scrollCon.style.left = '0px';
+				pre.style.color = '#e0e0e0';
+				next.style.color='#b0b0b0';
+				}
+				
+				
+				}, 10)
+			}
+
+
+			//单击下一页
+			next.addEventListener('click',clickNext);
+			function clickNext(){
+				var timeId = null;
+				timeId = setInterval(function(){
+				// 根据offsetLeft值，不断改变 元素的位置
+				scrollCon.style.left = (scrollCon.offsetLeft - 30) +　'px';
+			  	//  当滚动内容正好是 一半的时候
+				// 说明滚动 5个元素
+				if(scrollCon.offsetLeft  <= -1230){
+					clearInterval(timeId);
+			     //立即 设置为初始位置
+				scrollCon.style.left = '-1230px';
+				next.style.color = '#e0e0e0';
+				pre.style.color='#b0b0b0';
+				}
+				console.log(scrollCon.offsetLeft)
+				
+				}, 10)
+			}
+		}
+
+
+	</script>
+</body>
+</html>

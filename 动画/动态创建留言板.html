@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+	<style>
+		#msg{
+			border-radius: 6px;
+			list-style: none;
+		}
+		li{
+			float:left;
+			list-style:none;
+			/*width:66px;*/
+			height:70px;
+			line-height: 70px;
+		}
+		.text-img{
+			float:left;
+			border-radius: 50%;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<textarea name="" id="msg" cols="30" rows="10"></textarea>
+		<button id="btn">添加</button>
+		<ul id="list">
+
+		</ul>
+		<div id="box1">
+			
+		</div>
+		
+	</div>
+	<script>
+		window.onload  = function(){
+			var btn = document.getElementById('btn');
+			var list= document.getElementById('list');
+			var msg= document.getElementById('msg');
+			var allli = list.getElementsByTagName('li');
+			var boxEl = document.getElementById('box1');
+
+
+			// var link = document.querySelector('.link');
+			btn.onclick = function(){
+				var liEl = document.createElement('li');
+				//根据input值生成文本节点
+				var imgEl = document.createElement('img');
+				var text = document.createTextNode(msg.value);
+				imgEl.setAttribute('src','images/1.png');
+				imgEl.setAttribute('class','text-img');
+				boxEl.appendChild(imgEl);
+				liEl.appendChild(text);
+				if(allli.length == 0){//如果ul里面节点为空
+					list.appendChild(liEl);//使用appendChild
+				}else{
+					list.insertBefore(liEl,allli[0]);//否则使用insertBefore
+				}
+				msg.value = '';
+				
+			}
+
+		}
+
+	</script>
+</body>
+</html>
