@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单</title>
+	<style>
+		#nav{
+			background:orange;
+			width: 600px;
+			height: 40px;
+			margin:0 auto;
+
+		}
+		.main-nav{
+			float:left;
+			width: 100px;
+			height: 40px;
+		}
+		.main-nav a{
+			display: block;
+			width: 100px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;color:#fff;
+			text-decoration: none;
+		}
+		.sub-nav a{
+			display: block;
+			width: 100px;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+			background:blue;
+		}
+		.sub-nav{
+			display:none;
+		}
+	</style>
+</head>
+<body>
+<div id="nav">
+	<div class="main-nav">
+		<a href="#">游戏</a>
+		<div class="sub-nav">
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+
+		</div>
+	</div>
+	<div class="main-nav">
+		<a href="#">游戏</a>
+		<div class="sub-nav">
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+
+		</div>
+	</div>
+	<div class="main-nav">
+		<a href="#">游戏</a>
+		<div class="sub-nav">
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+
+		</div>
+	</div>
+	<div class="main-nav">
+		<a href="#">游戏</a>
+		<div class="sub-nav">
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+			<a href="#">子菜单</a>
+
+		</div>
+	</div>
+
+</div>
+	<script>
+		window.onload = function(){
+			var navEl = document.getElementById('nav');
+			var mainNav = document.children;
+			var subNav = document.getElementsByClassName('sub-nav');
+			for(var i=0;i< mainNav.length;i++){
+				mainNav[i].index = i;
+			
+				mainNav[i].onmouseover = function(){
+					subNav[this.index].style.display = 'block';
+				}
+				mainNav[i].onmouseout = function(){
+					subNav[this.index].style.display = 'none';
+				}
+			}
+
+		}
+
+	</script>
+</body>
+</html>

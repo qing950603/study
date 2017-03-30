@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dom0</title>
+	<style>
+		#box{
+			width:40px;
+			height:40px;
+			background:red;
+		}
+
+	</style>
+</head>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		window.onload = function(){
+			var boxEl = document.getElementById('box');
+			function text(){
+				alert('李白');
+				boxEl.removeEventListener('click',text,false);
+			}
+			boxEl.addEventListener('click',text,false);
+
+		}
+
+	</script>
+</body>
+</html>

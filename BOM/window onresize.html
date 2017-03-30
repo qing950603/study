@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body,html,div{
+			padding:0;
+			margin:0;
+		}
+		.content{
+			width:100%;
+			height:3000px;
+			background:pink;
+		}
+		#login-btn{
+			width: 80px;height: 36px;
+			color:#fff;
+			text-align:center;
+			line-height: 36px;
+			display:block;border-radius: 20px;
+			background-color:#de4965;
+			margin:0 auto;
+		
+		}
+		#layer{
+			width:100%;
+			height:1000px;
+			background:#000;
+			opacity: 0.5;
+			position: absolute;
+			left:0;
+			top:0;
+			display:none;
+		}
+		#login-box{
+			width:310px;
+			height:340px;
+			border-radius: 10px;
+			border:2px solid #de4965;
+			position: fixed;
+			left:0;
+			top:0;
+			background-color: rgba(38,38,38,0.6);
+			display:none;
+		}
+		#close-btn{
+			width: 80px;height: 36px;
+			color:#fff;
+			text-align:center;
+			line-height: 36px;
+			display:block;border-radius: 20px;
+			background-color:#de4965;
+			margin:0 auto;
+			margin-top:50px;
+
+		}
+	</style>
+</head>
+<body>
+<div class="content">
+	<span id="login-btn">登录</span>
+</div>
+<div id="layer"></div>
+<div id="login-box">
+	<span id="close-btn">关闭</span>
+</div>
+	<script>
+		window.onload = function(){
+			//可视区
+			var cWidth = document.documentElement.clientWidth;
+			var cHeight = document.documentElement.clientHeight;
+			//文档尺寸
+			var sWidth = document.documentElement.scrollWidth;
+			var sHeight = document.documentElement.scrollHeight;
+			var layer = document.getElementById('layer');
+			var loginBox = document.getElementById('login-box');
+			var loginBtn = document.getElementById('login-btn');
+			var closeBtn = document.getElementById('close-btn');
+			// console.log(cWidth);
+			// console.log(sWidth);
+			// console.log(cHeight);
+			// console.log(sHeight);
+			//设置弹层left top
+			function resize(){
+				var cWidth = document.documentElement.clientWidth;
+				var cHeight = document.documentElement.clientHeight;
+				var fLeft = Math.floor((cWidth - loginBox.offsetWidth)/2);
+				var fTop = Math.floor((cHeight - loginBox.offsetHeight)/2);
+				loginBox.style.left = fLeft+'px';
+				loginBox.style.top = fTop+'px';
+			}
+			// 弹层距离左侧left
+			
+			loginBtn.onclick = function(){
+				layer.style.display = 'block';
+				layer.style.height = sHeight +'px';
+				loginBox.style.display = 'block';
+				resize();
+			}
+			closeBtn.onclick = function(){
+				loginBox.style.display = 'none';
+				layer.style.display = 'none';
+			}
+			window.onresize = function(){
+				resize();
+			}
+		}
+		
+	</script>
+		
+</body>
+</html>

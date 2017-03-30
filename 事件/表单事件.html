@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#content{
+			width:200px;
+			height:40px;
+			background:pink;
+			border-radius: 10px;
+			line-height: 40px;
+		}
+
+	</style>
+</head>
+<body>
+<input type="text" value='请输入姓名' id='name'>
+<p id='content'></p>
+	<script>
+		window.onload = function(){
+			var nameEl = document.getElementById('name');
+			var content = document.getElementById('content');
+			//获取焦点事件
+			nameEl.onfocus = function(){
+				this.value = '';//清除表单内容
+
+			}
+			//失去焦点事件
+			nameEl.onblur = function(){
+				var msg = this.value;
+				if(msg.length==0){
+					this.value = '请输入姓名';
+				}else{
+					content.innerHTML = msg;
+				}
+
+
+			}
+		}
+
+	</script>
+</body>
+</html>

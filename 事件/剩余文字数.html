@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{
+		background:pink;
+	}
+		#input{
+			width:400px;
+			height:200px;
+			border-radius:10px;
+			background:#fff;
+			border:3px solid blue;
+		}
+		h2{
+			color:#fff;
+		}
+		h2 span{
+			color:red;
+		}
+		#pr{
+			display: block;
+			width:60px;
+			height:40px;
+			border-radius: 20px;
+			color:#fff;
+			background:blue;
+			text-align: center;
+			line-height: 40px;
+		}
+
+	</style>
+</head>
+<body>
+	<h2><span id="tip">您还可以输入</span><span id='num'>30</span>/30</h2>
+	<input type="text" id='input'>
+	<span id="pr">发布</span>
+	<script>
+		window.onload = function(){
+			var numEl = document.getElementById('num');
+			var input = document.getElementById('input');
+			var tip = document.getElementById('tip');
+			input.onkeyup = function(e){
+				var msg = this.value;
+				var num = 30 - msg.length;
+				//剩余字数
+				if(num >=0){
+					tip.innerHTML = '您还可以输入';
+					numEl.innerHTML = num;
+				}else{//输入字数超过30
+					tip.innerHTML = '您已超过';
+					numEl.innerHTML =msg.length-30;
+				}
+			
+			}
+		}
+
+	</script>
+</body>
+</html>

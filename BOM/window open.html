@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="open-btn">打开窗口</button>
+	<a href="#" target="_blank">dfdf </a>
+	<script>
+		window.onload = function(){
+			var openBtn = document.getElementById('open-btn');
+			openBtn.onclick = function(){
+				window.open('http://www.baidu.com','newwindow1','width=1000,height = 100,left=200,top=300');
+			}
+		}
+
+	</script>
+</body>
+</html>

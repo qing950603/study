@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prompt</title>
+</head>
+<body>
+	<button id="add">点击输入</button>
+	<div id="box"></div>
+	<script>
+		window.onload = function(){
+			var addBtn = document.getElementById('add');
+			var box = document.getElementById('box');
+			addBtn.onclick = function(){
+
+					var froo = window.prompt('请输入姓名');
+					//1.取消null
+					//2.确定 文本 
+					//如果用户点确定
+					if(froo!=null){
+						box.innerHTML = froo;
+					}
+			}
+					
+		}
+
+	</script>
+</body>
+</html>

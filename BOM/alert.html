@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>alert</title>
+</head>
+<body>
+	<button id="del">删除</button>
+	<p id="font">努力学习</p>
+	<script>
+		window.onload = function(){
+			var delBtn = document.getElementById('del');
+			var font = document.getElementById('font');
+
+			// 警告框
+			// window.alert('hello');
+			// 对话框
+			delBtn.onclick = function(){
+
+					var froo = window.confirm('亲，真的要删吗');
+				if(froo){
+					document.body.removeChild(font);
+				}
+			}
+					
+		}
+
+	</script>
+</body>
+</html>

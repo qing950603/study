@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+		.tab{
+			display:none;
+		}
+		.active{
+			display:block;
+		}
+		.current{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+<div id="tab-wrap">
+	<!-- tab导航 -->
+	<div id="tab-nav">
+		<span class='current'>tab1</span>
+		<span>tab2</span>
+		<span>tab3</span>
+	</div>
+	<!-- tab内容 -->
+	<div id="tab-con">
+		<div class="tab active">1111</div>
+		<div class="tab">2222</div>
+		<div class="tab">3333</div>
+	</div>
+</div>
+	<script>
+		window.onload = function(){
+			var tabWrap = document.getElementById('tab-wrap');
+			var tabNav = document.getElementById('tab-nav');
+			//所有导航
+			var tabSpans = tabNav.getElementsByTagName('span');
+			var tabCon = document.getElementById('tab-con');
+			//所有内容
+			var tabCons = tabCon.getElementsByClassName('tab');
+			for(var i = 0;i<tabSpans.length;i++){
+				tabSpans[i].index = i;
+				tabSpans[i].onmouseover = function(){
+					console.log(tabSpans[i]);
+					clearTabActive();
+					//再设置当前划过的nav，对应的tab  类为active
+					tabCons[this.index].className = 'tab active';
+					this.className = 'current';
+
+				}
+			}
+			//清除内容的 active类
+			function clearTabActive(){
+				for(var i=0;i<tabCons.length;i++){
+					tabCons[i].className = 'tab';
+					tabSpans[i].className = '';
+
+				}
+			}
+
+		}	
+	</script>
+</body>
+</html>

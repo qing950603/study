@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>返回顶部</title>
+	<style>
+		*{padding:0;margin:0;}
+		a{text-decoration:none;color:#3c3c3c;}
+		ul li{list-style: none;}
+		.view{
+			width:100%;
+			height:3000px;
+		}
+		.fixBox{
+			width:50px;
+			height:450px;
+			position: fixed;
+			right:40px;
+			top:40px;
+		}
+		.fixBox ul li{
+			width:50px;
+			height:50px;
+
+		}
+		.fixBox a{
+			margin:0 auto;
+			display:block;
+			width:34px;
+			height: 44px;
+		    padding-top:6px;
+		    border-bottom: 2px solid #efefef;
+		    text-align: center;
+
+		   
+		
+		}
+		.fixBox p{
+			margin:0 auto;
+			display:block;
+			width:34px;
+			height: 44px;
+		    padding-top:6px;
+		    border-bottom: 2px solid #efefef;
+		    text-align: center;
+		
+		}
+		.fixBox a span{
+			font-weight:bold;
+		}
+		.lineH{
+			line-height: 40px;
+		}
+		.icon1 a{
+			color:#ff4400;
+		}
+		.icon2 a{
+			color:#ff0055;
+		}
+		.icon3 a{
+			color:#8d7afb;
+		}
+		.icon4 a{
+			color:#a8c001
+		}
+		.icon5 a{
+			color:#a2745b;
+		}
+		.icon6 a{
+			color:#ff4400;
+		}
+		.icon1:hover{
+			background:url(images/img4.jpg) no-repeat;
+		}
+		.icon2:hover{
+			background:url(images/img3.jpg) no-repeat;
+		}
+		.icon3:hover{
+			background:url(images/img1.jpg) no-repeat;
+		}
+		.icon4:hover{
+			background:url(images/img4.jpg) no-repeat;
+		}
+		.icon5:hover{
+			background:url(images/img2.jpg) no-repeat;
+		}
+		.icon6:hover{
+			background:url(images/img4.jpg) no-repeat;
+		}
+		 a:hover{
+			color:#fff;	
+			border:transparent;
+		}
+		.icon7:hover{
+			background:#ff6700;
+		}
+	</style>
+</head>
+<body>
+	<h1>顶部</h1>
+	<div class="view">
+
+		<ul class="fixBox">
+			<li class="icon1"><a href="#">我常逛的</a></li>
+			<li class="icon2"><a href="#" class="lineH">时尚</a></li>
+			<li class="icon3"><a href="#" class="lineH">品质</a></li>
+			<li class="icon4"><a href="#" class="lineH">特色</a></li>
+			<li class="icon5"><a href="#" class="lineH">实惠</a></li>
+			<li class="icon6"><a href="#" >猜你喜欢</a></li>
+			<li class="icon7"><p id="go-top" style="display:none; "><span>∧ </span>顶部</p></li>
+			<li class="icon7"><a href="#" class="lineH">反馈</a></li>
+			<li class="icon7"><a href="#">暴恐举报</a></li>
+		</ul>
+
+	</div>
+	<script>
+		window.onload = function(){
+			var goTop = document.getElementById('go-top');
+			var icon1 = document.getElementById('icon1');
+		var timeId = null;
+		var status = true;//滚动条是否在滚动
+		goTop.onclick  = function(){
+		
+			//开启定时器
+				timeId = setInterval(function(){
+					//不断改变scrollTop的值
+					
+					//获取当前的滚动高度
+					
+					var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+					//缓冲运动，都是当前值除以一个数
+					var speed = Math.floor(-scrollTop / 8);//下取整
+					if(scrollTop == 0){
+						clearInterval(timeId);
+					}
+					status = true;
+					//当前值+speed  赋值给滚动条
+					document.body.scrollTop = document.documentElement.scrollTop + scrollTop + speed;
+
+
+				},30)
+		}
+		//滚动条滚动事件
+			window.onscroll = function(){
+				
+				var top = document.body.scrollTop || document.documentElement.scrollTop;//IE和谷歌的兼容问题
+				//当滚动条滚动到1000后
+				if(top >= 1000){
+
+					goTop.style.display = 'block';
+
+				}else{
+					goTop.style.display = 'none';
+				}
+				//如果滚动条在向上滚动,用户滚动了滚动条
+				if(status == false){
+					clearInterval(timeId);
+				}
+				status = false;
+			}
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<select name="" id="color-select">
+		<option value="0">请选择颜色</option>
+		<option value="red">红色</option>
+		<option value="green">绿色</option>
+		<option value="yellow">黄色</option>
+	</select>
+	<script>
+		window.onload= function(){
+			var colorEl = document.getElementById('color-select');
+			colorEl.onchange = function(){
+			
+				if(this.value != 0 ){
+					document.body.style.backgroundColor = this.value;
+				}
+			}
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单</title>
+	<style>
+		li{list-style: none;}
+		a{text-decoration:none;color:#000;}
+		*{padding:0;margin:0;}
+		#wrap{
+			width:684px;
+			/*height:96px;*/
+			margin:0 auto;
+			/*line-height: 96px;*/
+		}
+		#wrap li{
+			float:left;
+			overflow: hidden;
+		}
+		#wrap li .sty{
+			margin-right:20px;
+			line-height: 96px;
+			display: block;
+			height: 96px;
+		}
+		#wrap li .sty:hover{
+			color:#ff7e00;
+		}
+		.m1{
+			width: 1298px;
+			height:230px;
+			position: absolute;
+			top:96px;
+			left:0;
+			border-top:1px solid #e0e0e0;
+			text-align: center;
+			margin:0 auto;
+			display: none;
+		}
+		.m1 .m1-content{
+			width:238px;
+			height:210px;
+			padding-top:20px;
+			float:left;
+			margin-right:1px;
+		}
+		.m1-content .cur{
+			width:238px;
+			height:114px;
+			border-right:1px solid #e0e0e0;
+		}
+		.m1-content img{
+			margin-left:30px;
+			display: block;
+			width:160px;
+			height:100px;
+		}
+		.m1-content a{
+			display: block;
+			color:#333333;
+			margin-top:20px;
+
+		}
+		.m1-content span{
+			display: block;
+			color:#ff6700;
+			margin-top: 10px;
+		}
+		#m1 .content{margin-left:30px;}
+		
+	</style>
+	
+</head>
+<body>
+	<ul id="wrap">
+		<li>
+			<a href="#" class="sty">小米手机</a>
+			<div class="m1">
+				<div class="m1-content content">
+					<a href="#" class="cur"><img src="images/34.jpg" alt=""></a>
+					<a href="#">小米手机5c</a>
+					<span>1499元</span>
+				</div>	
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/32.jpg" alt=""></a>
+					<a href="#">小米Note 2</a>
+					<span>2799元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/30.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/31.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/34.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>				
+			</div>
+		</li>
+		<li>
+			<a href="#" class="sty">红米</a>
+			<div class="m1">
+				<div class="m1-content content">
+					<a href="#" class="cur"><img src="images/7.png" alt=""></a>
+					<a href="#">小米手机5c</a>
+					<span>1499元</span>
+				</div>	
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/8.png" alt=""></a>
+					<a href="#">小米Note 2</a>
+					<span>2799元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/9.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/10.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/11.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>				
+			</div>
+		</li>
+		<li>
+			<a href="#" class="sty">平板·笔记本</a>
+			<div class="m1">
+				<div class="m1-content content">
+					<a href="#" class="cur"><img src="images/26.jpg" alt=""></a>
+					<a href="#">小米手机5c</a>
+					<span>1499元</span>
+				</div>	
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/27.png" alt=""></a>
+					<a href="#">小米Note 2</a>
+					<span>2799元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/28.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/29.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/30.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>				
+			</div>
+		</li>
+		<li>
+			<a href="#" class="sty">电视</a>
+			<div class="m1">
+				<div class="m1-content content">
+					<a href="#" class="cur"><img src="images/1.png" alt=""></a>
+					<a href="#">小米手机5c</a>
+					<span>1499元</span>
+				</div>	
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/3.png" alt=""></a>
+					<a href="#">小米Note 2</a>
+					<span>2799元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/4.png" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/5.png" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/6.png" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>				
+			</div>
+		</li>
+		<li>
+			<a href="#" class="sty">盒子·影视</a>
+			<div class="m1">
+				<div class="m1-content content">
+					<a href="#" class="cur"><img src="images/34.jpg" alt=""></a>
+					<a href="#">小米手机5c</a>
+					<span>1499元</span>
+				</div>	
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/32.jpg" alt=""></a>
+					<a href="#">小米Note 2</a>
+					<span>2799元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/30.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/31.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/34.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>				
+			</div>
+		</li>
+
+		<li>
+			<a href="#" class="sty">路由器</a>
+			<div class="m1">
+				<div class="m1-content content">
+					<a href="#" class="cur"><img src="images/10.jpg" alt=""></a>
+					<a href="#">小米手机5c</a>
+					<span>1499元</span>
+				</div>	
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/11.jpg" alt=""></a>
+					<a href="#">小米Note 2</a>
+					<span>2799元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/30.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/31.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/34.jpg" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>				
+			</div>
+		</li>
+
+		<li>
+			<a href="#" class="sty">智能硬件</a>
+			<div class="m1">
+				<div class="m1-content content">
+					<a href="#" class="cur"><img src="images/1.png" alt=""></a>
+					<a href="#">小米手机5c</a>
+					<span>1499元</span>
+				</div>	
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/3.png" alt=""></a>
+					<a href="#">小米Note 2</a>
+					<span>2799元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/4.png" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/5.png" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>
+				<div class="m1-content">
+					<a href="#" class="cur"><img src="images/6.png" alt=""></a>
+					<a href="#">小米MIX</a>
+					<span>3499元起</span>
+				</div>				
+			</div>
+		</li>
+		<li>
+			<a href="#" class="sty">服务</a>
+			
+		</li>
+		<li>
+			<a href="#" class="sty">社区</a>
+			
+		</li>
+		<li>
+	</ul>
+	<script type="text/javascript">
+		window.onload = function(){
+			var wrapEl = document.getElementById('wrap');
+			var oli = document.getElementsByTagName('li');
+			var m1 = document.getElementsByClassName('m1');
+			var osty = document.getElementsByClassName('sty');
+			for(var i=0;i< oli.length;i++){
+				oli[i].index = i;
+			
+				oli[i].onmouseover = function(){
+					m1[this.index].style.display = 'block';
+				}
+				oli[i].onmouseout = function(){
+					m1[this.index].style.display = 'none';
+				}
+			}
+		}
+		
+
+	</script>
+	
+</body>
+</html>

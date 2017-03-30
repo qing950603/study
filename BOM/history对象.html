@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a href="http://www.baidu.com">百度</a>
+	<span id='back-btn'>后退</span>
+	<span id='forward-btn'>前进</span>
+	<script>
+		window.onload = function(){
+			var backBtn = document.getElementById('back-btn');
+			var fBtn = document.getElementById('forward-btn');
+			fBtn.onclick = function(){
+				history.forward();
+			}
+			backBtn.onclick = function(){
+				history.back();
+			}
+		}
+
+	</script>
+</body>
+</html>

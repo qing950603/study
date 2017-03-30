@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小米tab切换</title>
+	<style>
+		*{padding:0;margin:0;}
+		a{text-decoration: none;color:#000;}
+		#tab-wrap{
+			width:1016px;
+			height:690px;
+			border:1px solid red;
+			margin:0 auto;
+			background:#f5f5f5;overflow: hidden;
+			position: relative;
+		}
+		.tab{
+			position: absolute;
+			left:0;
+			top:50px;
+
+		}
+		.content-box{
+			width:234px;
+			height:304px;
+			background:#ffffff;
+			float:left;
+			margin-right:14px;
+			margin-left:4px;
+			text-align: center;margin-top:10px;
+		}
+		.content-box img{
+			display: block;
+			width:112px;
+			height:86px;
+			margin:0 auto;
+			margin-left:60px;
+			margin-top:50px;
+		}
+		.content-box a{
+			display:block;
+			margin-top:30px;
+		}
+		.content-box h5{
+			color:#ff6700;
+			font-size:16px;
+			margin-top:20px;
+		}
+		.content-box span{
+			display:block;
+			color:#cbb7b7;
+			font-size:16px;
+			margin-top:20px;
+		}
+		
+		#tab-nav{
+			float:right;
+			width:310px;
+			height:46px;
+			line-height: 46px;
+		}
+		#tab-nav a{
+			margin-right:18px;
+		}
+		.current{
+			border-bottom:2px solid #ff6700;
+			color:#ff6700;
+		}
+		.tab{
+			display:none;
+		}
+		.active{
+			display:block;
+		}
+	</style>
+</head>
+<body>
+	<div id="tab-wrap">
+		<div id="tab-nav">
+			<a href="#" class='current'>热门</a>
+			<a href="#">耳机音箱</a>
+			<a href="#">电源</a>
+			<a href="#">电池存储卡</a>
+		</div>
+		
+		<div id="tab-con">
+			<div class="tab active">
+				<div class="content">
+					<div class="content-box">
+						<img src="images/1.png" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/1.png" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/1.png" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/1.png" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+				</div>
+
+				<div class="content">
+					<div class="content-box">
+						<img src="images/1.png" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/1.png" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/1.png" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/1.png" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+				</div>
+			</div>
+			<div class="tab">
+				<div class="content">
+					<div class="content-box">
+						<img src="images/3.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/3.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/3.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/3.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+				</div>
+
+				<div class="content">
+					<div class="content-box">
+						<img src="images/3.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/3.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/3.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/3.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+				</div>
+			</div>
+			<div class="tab">
+				<div class="content">
+					<div class="content-box">
+						<img src="images/5.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/5.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/5.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/5.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+				</div>
+
+				<div class="content">
+					<div class="content-box">
+						<img src="images/5.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/5.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/5.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/5.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="tab">
+				<div class="content">
+					<div class="content-box">
+						<img src="images/20.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/20.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/20.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/20.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+				</div>
+
+				<div class="content">
+					<div class="content-box">
+						<img src="images/20.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/20.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/20.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+					<div class="content-box">
+						<img src="images/20.jpg" alt="">
+						<a href="#">SanDisk 32GB存储卡</a>
+						<h5>98元</h5>
+						<span>12人评价</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+		window.onload = function(){
+			var tabWrap = document.getElementById('tab-wrap');
+			var tabNav = document.getElementById('tab-nav');
+			//所有导航
+			var tabas = tabNav.getElementsByTagName('a');
+			var tabCon = document.getElementById('tab-con');
+			//所有内容
+			var tabCons = tabCon.getElementsByClassName('tab');
+			for(var i = 0;i<tabas.length;i++){
+				tabas[i].index = i;
+				tabas[i].onmouseover = function(){
+					console.log(tabas[i]);
+					clearTabActive();
+					//再设置当前划过的nav，对应的tab  类为active
+					tabCons[this.index].className = 'tab active';
+					this.className = 'current';
+
+				}
+			}
+			//清除内容的 active类
+			function clearTabActive(){
+				for(var i=0;i<tabCons.length;i++){
+					tabCons[i].className = 'tab';
+					tabas[i].className = '';
+
+				}
+			}
+
+		}	
+	</script>
+</body>
+</html>

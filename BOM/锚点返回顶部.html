@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>回到顶部</title>
+	<style>
+		.content{
+			width:100%;
+			height:3000px;
+			border-bottom:10px solid red;
+		}
+
+		#reTop{
+			display:block;
+			position: fixed;
+			width:40px;
+			height:40px;
+			background:red;
+			right:0;
+			bottom:0;
+			display:none;
+		}
+	</style>
+</head>
+<body>
+<div id="top">这里是光明顶</div>
+
+	<a id="reTop" href="#top">回到顶部</a>
+	<div class="content"></div>
+
+	
+
+	<script>
+
+		window.onload = function(){
+			var reTop = document.getElementById('reTop');
+			window.onscroll = function(){
+				var top = document.body.scrollTop || document.documentElement.scrollTop;
+				console.log(top);
+				//当滚动条滚动到1000后
+				if(top >= 1000){
+
+					reTop.style.display = 'block';
+
+				}else{
+					reTop.style.display = 'none';
+				}
+				
+			}
+
+		}
+	</script>
+	
+</body>
+</html>

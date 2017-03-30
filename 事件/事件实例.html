@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+ul,li{
+	padding:0;
+	margin:0;
+	list-style: none;
+}
+		.container{
+			width: 500px;
+			height: 400px;
+			margin:0 auto;
+			border:1px solid red;
+			margin-top:60px;
+		}
+		#select-box{
+			width: 200px;
+			background:pink;
+			margin:0 auto;
+			border-radius: 10px;
+		}
+		#select-text{
+			height:24px;
+			border-radius: 20px;
+			border:2px solid #e4007f;
+			margin-left:16px;
+		}
+		#select-box ul{
+			background:#99f7db;
+			width:168px;
+			text-align: center;
+			margin-left:16px;
+			display: none;
+
+		}
+		#select-box li{
+			padding:4px 0;
+			line-height: 30px;
+		
+
+		}
+		#select-box li:hover{
+			background:orange;
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="select-box">
+			<input type="text" id="select-text">
+			<ul id="select-list">
+				<li>驴得水</li>
+				<li>白雪公主</li>
+				<li>山炮进城</li>
+				<li>霸王别姬</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		window.onload = function(){
+			var selectEl = document.getElementById('select-box');
+			var selectText = document.getElementById('select-text');
+			var selectList = document.getElementById('select-list');
+			var lis = selectList.getElementsByTagName('li');
+			for(var i=0;i<lis.length;i++){
+				lis[i].onclick = function(e){
+					selectText.value = this.innerHTML;
+					e.stopPropagation();
+					selectList.style.display = 'none';
+				}
+			}
+			selectText.onclick = function(e){
+				selectList.style.display = 'block';
+				e.stopPropagation();//阻止事件冒泡
+			}
+			document.onclick = function(){
+				selectList.style.display = 'none';
+			}
+
+		}
+
+	</script>
+</body>
+</html>

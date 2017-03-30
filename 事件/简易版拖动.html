@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		#box{
+			width:40px;
+			height:40px;
+			background:red;
+			position: absolute;
+		}
+
+	</style>
+</head>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		window.onload = function(){
+			var boxEl = document.getElementById('box');
+			// 1.onmousedown 鼠标按下
+			// 2.onmousemove 鼠标移动
+			// 3.onmouseup 鼠标抬起
+			boxEl.onmousedown = function(){
+				boxEl.onmousemove = function(e){
+					boxEl.style.left = e.clientX + 'px';
+					boxEl.style.top = e.clientY + 'px';
+				}
+			}
+			boxEl.onmouseup = function(){
+				boxEl.onmousedown =null;
+				boxEl.onmousemove = null;
+			}
+			
+		}
+
+	</script>
+</body>
+</html>
