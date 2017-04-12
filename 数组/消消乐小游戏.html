@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{padding:0;margin:0;}
+		body{background:#f36ebc;}
+		.cur{
+			width:60px;
+			height:60px;
+			border-radius: 50%;
+			background:#3ac9b7;
+			text-align: center;
+			line-height: 60px;
+			font-size:20px;
+			color:#fff;
+			position: absolute;
+			left:140px;
+			top:100px;
+		}
+		.box{
+			width:700px;
+			height:500px;
+			margin:40px auto;
+			background:#595457;
+			border:2px solid #fff;
+			position: relative;
+		}
+		#over{
+			width:250px;
+			height:150px;
+			background:#923ac9;
+			border:3px solid #fff;
+			position: absolute;
+			left:210px;
+			top:175px;
+			display: none;
+		}
+		#over p{
+			color:#fff;
+			font-size:20px;
+			text-align: center;
+			margin-top:40px;
+
+		}
+		#over span{
+			display: block;
+			width:70px;
+			height:30px;
+			color:#fff;
+			border-radius: 10px;
+			border:1px solid #fff;
+			text-align: center;
+			line-height: 30px;
+			margin:20px auto;
+			
+		}
+		#start-btn{
+			width:80px;
+			height:40px;
+			background:red;
+			border:none;
+			margin:200px auto;
+			display: block;
+			font-size: 20px;
+			color:#fff;
+			border-radius: 6px;
+		}
+		.strangle{
+			width:60px;
+			height:60px;
+			background:red;
+			position: absolute;
+			top:-60px;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="cur"><span id="score">0</span>分</div>
+	<div class="box">
+		<div id="map"></div>
+		<div id="over">
+			<p>Game Over!</p>
+			<span id="start">重新开始</span>
+		</div>
+		<button id="start-btn">开始</button>
+	</div>
+	
+	<script>
+		window.onload = function(){
+			var startBtn = document.getElementById('start-btn');
+			var start = document.getElementById('start');
+			var over = document.getElementById('over');
+			var strangle = document.getElementById('strangle');
+			var score = document.getElementById('score');
+			var colorArr = ['red','orange','green','purple','yellow','blue'];
+			var map = document.getElementById('map');
+			var timeId = null;
+			var box = null;
+			var num = 0;//游戏分数
+			//开始按钮
+			startBtn.onclick = function(){
+				this.style.display = 'none';
+				render();//渲染界面，创建div，动画等
+			}
+			start.onclick = function(){
+				over.style.display = 'none';
+				render();
+			}
+			function render(){
+
+				box = createBox();//1.创建
+				box.onclick = function(){
+					num++;
+					map.removeChild(box);
+					render();
+					score.innerHTML =num;
+				}
+				map.appendChild(box);//2.插入
+				move(box,440,function(){//3.动画和动画结束
+					//动画结束以后移出
+					num--;
+					if(num <= 0 ){//游戏结束
+						num = 0;
+						over.style.display = 'block';
+						score.innerHTML = num;
+						box.style.top = '440px';
+					}else{//分数不小于0 
+						render();//递归
+						map.removeChild(box);
+					}
+				});
+			}
+			//根据json创建一个div
+			function createBox(){
+				var el = document.createElement('div');
+				el.className = 'strangle';
+				var colorIndex = getRandom(0,colorArr.length-1);
+				el.style.left =  getRandom(0,640) + 'px';
+				el.style.backgroundColor = colorArr[colorIndex];
+				return el;
+			}
+			//运动
+			function move(obj, nNum,callback){
+				clearInterval(obj.timeId);
+				var speed = 0;
+				//通过speed 正负控制方向
+				if(obj.offsetTop > nNum){
+					speed = -10;  //向上
+				}else{
+					speed = 10; //向下
+				}
+				obj.timeId = setInterval(function(){
+					var top = obj.offsetTop;
+					obj.style.top = (top + speed) + 'px';
+		      		var result = nNum - obj.offsetTop;
+					if(Math.abs(result) <= 10){
+							clearInterval(obj.timeId);
+							obj.style.top  = nNum + 'px';
+						if(callback){//如果回调函数存在
+							callback();//()调用函数
+						}
+				}
+				}, 30);
+			}
+			//随机整数函数
+			function getRandom(n,m){
+				var num = Math.floor(Math.random()*(m-n+1)+n);
+				return num;
+			}
+
+		}
+	</script>
+</body>
+</html>

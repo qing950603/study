@@ -1,0 +1,14 @@
+body{
+	background:pink;
+}
+.box{width:100px;height:100px;background:blue;}
+
+.btn{
+	display: block;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: green;
+	color:#fff;
+}

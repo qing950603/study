@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<label for="" >用户名</label>
+<input type="text" id="username">
+<button id="login">登录</button>
+	<script>
+		window.onload = function(){
+			var userEl = document.getElementById('username');
+			var loginBtn = document.getElementById('login');
+			loginBtn.onclick = function(){
+				var userValue = trim(userEl.value);
+				if(userValue == ''){
+					alert('请输入姓名');
+				}else{
+					alert('格式正确');
+				}
+
+			}
+			function  trim(str){
+				var reg = /(^\s*)(\s*$)/g;
+				return str.replace(reg,'');
+			}
+		}
+	</script>
+</body>
+</html>

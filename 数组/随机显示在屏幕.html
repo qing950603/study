@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#box{
+			position: absolute;
+			left:0;
+			top:0;
+			width:100px;
+			height:100px;
+			background:red;
+		}
+	</style>
+</head>
+<body>
+<!-- 横向随机范围（0到可视区宽度-元素自身宽度） -->
+<div id="box"></div>
+	
+	<script>
+		window.onload = function(){
+			//可视区尺寸
+			var cWidth = document.documentElement.clientWidth;
+			var cHeight = document.documentElement.clientHeight;
+			var boxEl = document.getElementById('box');
+			//随机left值
+			var left = getRandom(0,cWidth-100);
+			//随机topz值
+			var top = getRandom(0,cHeight-100);
+			boxEl.style.left = left + 'px';
+			boxEl.style.top = top + 'px';
+			console.log(top);
+			//随机整数函数
+			function getRandom(n,m){
+				var num = Math.floor(Math.random()*(m-n+1)+n);
+				return num;
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		a{
+			text-decoration: none;
+			color:#c9242b;
+		}
+		.wraper{
+			width:400px;
+			/*height:560px;*/
+			border:1px solid #c7c7c7;
+			margin:0 auto;
+			margin-top:50px;
+			overflow: hidden;
+		}
+		.headwrap{
+			width:132px;
+			height:50px;
+
+			float:left;
+			text-align:center;
+			line-height: 50px;
+			font-size:20px;
+		}
+		.non{
+			border:1px solid #c9242b;
+			border-bottom:none;
+		}
+		.login{
+			width:398px;
+			border:1px solid #c9242b;
+			float:left;
+			padding-top:26px;
+		}
+		.login .loginIn{
+			display: block;
+			width:346px;
+			height:42px;
+			margin:0 auto;
+		}
+		.login span{
+			font-size: 14px;
+			margin-left:28px;
+			color:#f29200;
+			display:none;
+		}
+		.middle{
+			width:400px;
+			height:54px;
+			line-height: 54px;
+		}
+		.middle h5{
+			float:left;
+			font-size: 14px;
+			margin-left:28px;
+		}
+		.middle a{
+			float:right;
+			font-size: 14px;
+			margin-right:28px;
+		}
+		.sty{
+			border:1px solid #c9242b;
+			border-bottom:none;
+		}
+		.loginBtn a{
+			float:left;
+			color:#c9242b;
+			font-size:16px;
+			margin:60px 0px 44px 28px;
+		}
+		.loginBtn button{
+			width:190px;
+			height:40px;
+			border:none;
+			background:#c9242b;
+			margin-top:44px;
+			margin-left:60px;
+			color:#fff;
+			font-size:16px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wraper">
+		<div class="reg">
+			<p class="headwrap">手机注册</p>
+			<p class="headwrap non">邮箱注册</p>
+			<p class="headwrap">个性注册</p>
+		</div>
+		
+		<div class="login">
+			
+			<input type="text" class="loginIn" placeholder ="邮箱" id="mailbox">
+			<span id="warn">邮箱填写错误，请更正</span>
+			<input type="password" class="loginIn" placeholder="密码" id="pass">
+			<span id="warn1">密码过短，至少6位字母和数字</span>
+			<div class="middle">
+				<h5>实名及防沉迷信息填写</h5>
+				<a href="#">为什么要填写</a>
+			</div>
+
+			<input type="text" class="loginIn" placeholder="姓名" id="name">
+			<span id="warn2">填写错误，姓名为2~5个汉字</span>
+			<input type="text" class="loginIn" placeholder="身份证号码" id="num">
+			<span id="warn3">身份证号码填写错误</span>
+
+			<div class="loginBtn">
+				<a href="#">用户服务协议</a>
+				<button>接受协议并注册</button>
+			</div>
+		</div>
+		
+	</div>
+	<script>
+		function G(sId){
+			return document.getElementById(sId);
+		}
+
+		window.onload = function(){
+			//验证邮箱
+			function isEmail(str){
+		      var reg = /\w+((-w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+/;
+		       return reg.test(str);
+			}
+			//验证密码
+			function isPass(str){
+		      var reg = /^[0-9A-Za-z]{6,}$/;
+		       return reg.test(str);
+			}
+			//验证姓名
+			function isName(str){
+		      var reg=/^[\u4e00-\u9fa5]{2,5}$/;
+		       return reg.test(str);
+			}
+			//验证身份证号
+			function isNum(str){
+		      var reg = /^(\d{15}$|^\d{18}$|^\d{17}(\d|X|x))$/;
+		       return reg.test(str);
+			}
+			
+			
+			//显示提示内容
+			var warn = G('warn');
+			function warnTip(sText){
+				warn.innerHTML = sText;
+				warn.style.display = 'block';	
+			}
+			var warn1 = G('warn1');
+			function warnTip1(sText){
+				warn1.innerHTML = sText;
+				warn1.style.display = 'block';	
+			}
+			var warn2 = G('warn2');
+			function warnTip2(sText){
+				warn2.innerHTML = sText;
+				warn2.style.display = 'block';	
+			}
+			var warn3 = G('warn3');
+			function warnTip3(sText){
+				warn3.innerHTML = sText;
+				warn3.style.display = 'block';	
+			}
+			//邮箱用户名验证
+			
+				mailbox.onblur = function(){
+					var mailbox = G('mailbox');
+					var mailEl = mailbox.value;	
+					if(mailEl.length != 0 ){
+						if(isEmail(mailEl)){
+							warnTip('');
+						}else{
+							warnTip('邮箱填写错误，请更正');
+						}
+
+					}else{
+						warnTip('不能为空');	
+					
+					}
+				}
+				//密码验证
+				var pass = G('pass');
+				pass.onblur = function(){
+					
+					var passEl = pass.value;
+					if(passEl.length != 0 ){
+
+						if(isPass(passEl)){
+							warnTip1('');
+						}else{
+							warnTip1('密码过短，至少6位字母和数字');
+						}
+
+					}else{
+						warnTip1('不能为空');	
+					}
+				}
+				//姓名验证
+				var name = G('name');
+				name.onblur = function(){
+					var nameEl = name.value;
+					if(nameEl.length != 0 ){
+						if(isName(nameEl)){
+							warnTip2('');
+						}else{
+							warnTip2('填写错误，姓名为2~5个汉字');
+						}
+
+					}else{
+						warnTip2('不能为空');	
+					}
+				}
+				//身份证验证
+				var num = G('num');
+				num.onblur = function(){
+
+					var numEl = num.value;
+					if(numEl.length != 0 ){
+
+						if(isNum(numEl)){
+							warnTip3('');
+						}else{
+							warnTip3('身份证号码填写错误');
+						}
+
+					}else{
+						warnTip3('不能为空');	
+					}
+				}	
+				
+		}
+
+	</script>
+</body>
+</html>

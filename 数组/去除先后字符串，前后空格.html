@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		window.onload = function(){
+			var str = '      李白  ';
+			var reg = /(^\s*)|(\s*$)/g;//分成两组1.空格开头任意次  2.空格结尾任意次
+			var str1 = str.replace(reg,'');
+			console.log(str);
+			console.log(str1);
+
+			function  trim(str){
+				var reg = /(^\s*)(\s*$)/g
+				return str.replace(reg,'');
+			}
+		}
+	</script>
+</body>
+</html>

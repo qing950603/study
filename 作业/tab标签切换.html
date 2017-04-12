@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#tab-wrap{
+			width:500px;
+			height:500px;
+			margin:0 auto;
+			text-align:center;
+		}
+		#tab-nav span{
+			display: block;
+			width:160px;
+			height:130px;
+			text-align: center;
+			line-height: 130px;
+			float:left;
+			background:blue;
+			color:#fff;
+			font-size:40px;
+		}
+		#tab-nav{
+			margin-bottom:30px;
+		}
+		#tab-con .tab{
+			width:480px;
+			height:300px;
+			font-size: 30px;
+			color:#7810c9;
+			display: none;
+			line-height: 300px;
+		}
+
+	</style>
+</head>
+<body>
+<div id="tab-wrap">
+	<!-- tab导航 -->
+	<div id="tab-nav">
+		<span class='current'>菜单1</span>
+		<span class='current'>菜单2</span>
+		<span class='current'>菜单3</span>
+	</div>
+	<!-- tab内容 -->
+	<div id="tab-con">
+		<div class="tab">今天你想吃啥</div>
+		<div class="tab">米饭还是面条</div>
+		<div class="tab">任由你选</div>
+	</div>
+</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('.current').click(function(){
+				var i = $('.current').index($(this));
+				$(this).parents().siblings().find('.tab').hide();
+				$('.current').css('background-color','blue');
+				$('.current').eq(i).css('background-color','red');
+				$('.tab').eq(i).show();
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		window.onload = function(){
+			var arr = [1,2,3,4,5,5,3,2,3,2];
+			var tempArr =[]; //空数组用于存放新的数组
+			for(var i=0;i<arr.length;i++){
+				//判断arr[i]在tempArr是否存在
+				//如果不存在
+				if(!arrHasEl(tempArr,arr[i])){
+					tempArr.push(arr[i]);
+					console.log(tempArr);
+				}
+
+			}
+			//判断某个值是否在数组中
+			function arrHasEl(arr,el){
+				for(var i=0;i<arr.length;i++){
+					if(arr[i]==el){
+						return true;
+					}
+				}
+				return false;
+			}
+		
+		}
+
+	</script>
+</body>
+</html>

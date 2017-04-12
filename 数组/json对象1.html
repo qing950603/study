@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.title{
+			font-size:30px;
+			color:red;
+			width:200px;
+			height:200px;
+			background:red;
+		}
+		#main{
+			width:400px;
+			margin:0 auto;
+		}
+		.row{
+			width:100%;
+			background:red;
+			
+		}
+
+
+	</style>
+	<script src="js/data.js"></script>
+</head>
+<body>
+<p id ="count"></p>
+<div id="main">
+	<div class="row">
+		<img src="" alt="">
+		<h4>标题</h4>
+		<p>英文标题</p>
+		<h5>导演：xxx</h5>
+		<span class="score">9</span>
+		<span class="year">1995</span>
+	</div>
+</div>
+	<script>
+		window.onload = function(){
+			var str='';
+			var main = document.getElementById('main');
+			var subjects = data.subjects;
+			for(var i=0;i<subjects.length;i++){
+				str += '<div class="row"'+'<p id = "title">'+subjects[i].title+'</p>'+'<h4>'+subjects[i].year+'</h4>'+'<p>'+(subjects[i].genres).join(',')+'</p>'+'</div>';
+				main.innerHTML = str;
+
+			}
+		}
+	</script>
+</body>
+</html>

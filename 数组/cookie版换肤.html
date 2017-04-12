@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cookie版换肤</title>
+	<link rel="stylesheet" href="css/normal.css" id="changeStyle">
+</head>
+<body>
+<button id="normalBtn">默认样式</button>
+<button id="orangeBtn">橙色系</button>
+<button id="clearBtn">清除记录</button>
+<div class="box"></div>
+<span class="btn">按钮</span>
+
+	<script>
+		window.onload = function(){
+			var changeStyle = document.getElementById('changeStyle');
+			console.log(changeStyle);
+			var normalBtn = document.getElementById('normalBtn');
+			var orangeBtn = document.getElementById('orangeBtn');
+			var clearBtn = document.getElementById('clearBtn');
+			var skin = getCookie('skin');
+			if(skin != ''){
+				changeStyle.setAttribute('href','css/'+skin+'.css');
+			}
+			
+			orangeBtn.onclick = function(){
+				changeStyle.setAttribute('href','css/orange.css');
+				setCookie('skin','orange',10);
+			}
+			normalBtn.onclick = function(){
+				changeStyle.setAttribute('href','css/normal.css');
+				setCookie('skin','normal',10);
+			}
+			clearBtn.onclick = function(){
+				removeCookie('skin');
+			}
+			function setCookie(name,value,time){
+				//设置cookie
+				var date = new Date();
+				//设置到某一天
+				date.setDate(date.getDate()+time);
+				date.toGMTString();//转成标准的时间字符串
+				document.cookie=name+'='+value+';expires='+date;
+			}
+
+			function  getCookie(key){
+				var arr  = document.cookie.split('; ');
+				for(var i=0;i<arr.length;i++){
+					var arr1 = arr[i].split('=');
+					if(arr1[0] == key){
+						return arr1[1];
+					}
+				}
+				return '';
+			}
+			function removeCookie(name){
+				//设置过期时间为-1
+				//设置某条cookie过期时间为昨天
+				setCookie(name,'1',-1);
+
+			}
+		}
+	</script>
+</body>
+</html>

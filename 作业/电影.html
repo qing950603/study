@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		.wraper{
+			width:1000px;
+			margin:0 auto;
+			margin-top:30px;
+		}
+		#main{
+			width:470px;
+			height:220px;
+			float:left;
+		}
+		#main #img{
+			float:left;
+			width:162px;
+			height:222px;
+		}
+		#main .con{
+			width:260px;
+			height:180px;
+			border-bottom:1px solid #e5e5e5;
+			float:left;
+			margin-left:18px;
+			margin-top:38px;
+		}
+		.con h2{
+			font-size: 26px;
+			color:#333333;
+			margin-top:30px;
+		}
+		.con p{
+			font-size: 10px;
+		}
+		.con h3{
+			font-size: 24px;
+			color:#ffb400;
+			margin-top:20px;
+		}
+		.con h5{
+			color:#323431;
+			font-size: 16px;
+			margin-top: 20px;
+		}
+		.con .year{
+			display:block;
+			font-size: 18px;
+			color:#989a97;
+			margin-top: 18px;
+		}
+	</style>
+	<script src="js/data.js"></script>
+</head>
+<body>
+	<div class="wraper">
+		<div id="main">
+			<img src="images/img1.jpg" alt="" id="img">
+			<div class="con">
+				<h4>标题</h4>
+				<p>英文标题</p>
+				<h3 class="score">9</h3>
+				<h5>类型</h5>
+				<span class="year">1995</span>
+			</div>
+		</div>
+		
+
+	<script>
+		window.onload = function(){
+			var str='';
+			var main = document.getElementById('main');
+			var subjects = data.subjects;
+
+			for(var i=0;i<subjects.length;i++){
+				console.log(data);
+				str += '<div class="wraper">'
+							+'<div id="main">'
+								+'<img id="img" src="'+subjects[i].images.small+'">'
+								+'<div class="con"'
+									+'<h2>'+subjects[i].title+'</h2>'
+									+'<p>'+subjects[i].original_title+'</p>'
+									+'<h3>'+subjects[i].rating.average+'</h3>'
+									+'<h5>'+(subjects[i].genres).join(',')+'</h5>'
+									+'<span class="year">'+subjects[i].year+'</span>'
+								+'</div>'
+							+'</div>'
+						+'</div>';
+				main.innerHTML = str;
+
+			}
+		}
+	</script>
+</body>
+</html>

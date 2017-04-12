@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.main{
+			width:400px;
+			margin:0 auto;
+			margin-top: 100px;
+
+		}
+		a{text-decoration: none;color:#fff;}
+		#nav{
+			background:red;
+		}
+		#nav a{
+			display: block;
+			text-align: center;
+			height:30px;
+			line-height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<span id="nav-btn">菜单</span>
+		<div id="nav">
+			<a href="#">首页</a>
+			<a href="#">项目1</a>
+			<a href="#">项目2</a>
+			<a href="#">项目3</a>
+			<a href="#">项目4</a>
+			<a href="#">项目5</a>
+		</div>
+	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script>
+		$(function(){
+			// var foo = true;
+			$('#nav-btn').click(function(){
+				// if(foo){
+				// 	$('#nav').slideUp('slow');//隐藏
+				// 	foo=false;
+				// }else{
+				// 	$('#nav').slideDown('slow');//显示
+				// 	foo=true;
+				// }
+				// $('#nav').toggle();
+				$('#nav').slideToggle('slow');
+			});
+		})
+	</script>
+</body>
+</html>

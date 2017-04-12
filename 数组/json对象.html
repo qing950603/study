@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>json字符串之间的转换</title>
+</head>
+<body>
+<h1 id="name"></h1>
+<h2 id="title"></h2>
+	<script>
+		window.onload = function(){
+			var name = document.getElementById('name');
+			var title = document.getElementById('title');
+			//json对象
+			var data = {
+				name:'李白',
+				title:'诗人'
+			}
+			console.log(data.name);//data[name]
+			//json字符串
+			var foo = '{"name":"李白","title":"诗人"}';
+			var data2 = JSON.parse(foo);
+			console.log(typeof(data2));
+			name.innerHTML = data2.name;
+			title.innerHTML = data2.title;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		ul li{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color:#806f66;
+		}
+		.wrap{
+			overflow: hidden;
+			position: relative;
+			width:1190px;
+			margin:100px auto;
+			border:1px solid #e6e2e1;
+			
+		}
+		.box{
+			
+			width:120px;
+			height:62px;
+			background:#f7f5f5;
+			float:left;
+			overflow: hidden;
+
+		}
+		.con .box .stra{
+			display:block;
+	        width: 0px;
+	        height: 0px;
+	        border: 8px solid transparent;
+	        border-left: 8px solid #d7cecb;
+	        float:left;
+	        margin-left:14px;
+	        margin-top:12px;
+	    }
+	    .con .box span{
+	    	float:left;
+	    	display:block;
+	    	color:#d7cecb;
+	    	font-size:14px;
+	    	margin-top:14px;
+	    }
+		.con li a:first-child{
+			margin-left: 30px;
+		}
+	    .con li a{
+	    	display: block;
+	    	width:90px;
+	    	height:20px;
+	    	margin-right:100px;
+	    	float:left;
+	    	font-size: 12px;
+	    	color:#806f66;
+	    	margin-top:10px;
+	    }
+	    #more{
+			position: absolute;
+			top:8px;
+			right:10px;
+			position: relative;
+	    }
+	   #more span{
+	   	 font-size: 14px;
+	   	 color:#806f66;
+	   	 position: absolute;
+	   	 top:0;
+	   	 right:0;
+	   	 cursor:pointer;
+
+	   }
+	   #more #packBtn{
+	   	 display: none;
+	   }
+	   #more i{
+	   	font-size: 14px;
+	   	font-weight: bold;
+	   }
+	   .sub-nav{
+	   		float:left;
+	   		display: none;
+	   }
+	   .box1{
+			float:left;
+			width:120px;
+			height:122px;
+			background:#f7f5f5;
+			margin-left:-120px;
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="con">
+			<li class="box">
+				<i class="stra"></i>
+				<span>分类</span>
+			</li>
+			<li>
+				<a href="#">3c数据配件</a>
+				<a href="#">智能设备</a>
+				<a href="#">影音视听</a>
+				<a href="#">大家电</a>
+				<a href="#">平板电脑</a>
+			</li>
+			<li>
+				<a href="#">影音视听</a>
+				<a href="#">网络设备</a>
+				<a href="#">生活电器</a>
+				<a href="#">笔记本</a>
+				<a href="#">电子产品</a>
+			</li>
+			<ul class="sub-nav">
+				<li class="box1">
+			
+				</li>
+				<li>
+					<a href="#">家装主材</a>
+					<a href="#">汽车内外饰用品</a>
+					<a href="#">相机/摄影机</a>
+					<a href="#">精品男装</a>
+					<a href="#">T恤</a>
+				</li>
+				<li>
+					<a href="#">电子/电工</a>
+					<a href="#">烧水壶/电热水壶</a>
+					<a href="#">相机/摄影机</a>
+					<a href="#">精品男装</a>
+					<a href="#">行车记录仪</a>
+				</li>
+				<li>
+					<a href="#">厨房电器</a>
+					<a href="#">电子词典/电纸书</a>
+					<a href="#">相机/摄影机</a>
+					<a href="#">生活电器</a>
+					<a href="#">电玩游戏</a>
+				</li>
+			</ul>
+		</ul>
+		<div id="more">
+			<span id="moreBtn">更多</span>
+			<span id="packBtn">收起</span>
+		</div>
+
+	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script>
+	$(function(){
+		$('#moreBtn').click(function(){
+			$('#moreBtn').hide();
+			$('#packBtn').show();
+			$(this).parents().siblings().find('.sub-nav').show(0.1);
+		})
+
+		$('#packBtn').click(function(){
+			$('#moreBtn').show();
+			$('#packBtn').hide();
+			$(this).parents().siblings().find('.sub-nav').hide(0.1);
+		})
+
+	})
+	</script>
+</body>
+</html>

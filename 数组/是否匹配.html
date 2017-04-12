@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding:0;
+			margin:0;
+		}
+		a{
+			text-decoration: none;
+			color:#c9242b;
+		}
+		.wraper{
+			width:400px;
+			height:560px;
+			border:1px solid #c7c7c7;
+			margin:0 auto;
+			margin-top:50px;
+		}
+		.headwrap{
+			width:132px;
+			height:50px;
+			border:1px solid #c9242b;
+			margin:0 auto;
+			text-align:center;
+			line-height: 50px;
+			font-size:20px;
+		}
+		.login .loginIn{
+			display: block;
+			width:346px;
+			height:42px;
+			margin:0 auto;
+		}
+		.login span{
+			font-size: 14px;
+			margin-left:28px;
+			color:#f29200;
+			display:none;
+		}
+		.middle{
+			width:400px;
+			height:54px;
+			line-height: 54px;
+		}
+		.middle h5{
+			float:left;
+			font-size: 14px;
+			margin-left:28px;
+		}
+		.middle a{
+			float:right;
+			font-size: 14px;
+			margin-right:28px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wraper">
+		<p class="headwrap">邮箱注册</p>
+		<div class="login">
+			<input type="text" class="loginIn" placeholder ="邮箱">
+			<span>邮箱填写错误，请更正</span>
+			<input type="text" class="loginIn" placeholder="密码">
+			<span>密码过短，至少6位字母和数字</span>
+			<div class="middle">
+				<h5>实名及防沉迷信息填写</h5>
+				<a href="#">为什么要填写</a>
+			</div>
+
+			<input type="text" class="loginIn" placeholder="姓名">
+			<span>填写错误，姓名为2~5个汉字</span>
+
+			<input type="text" class="loginIn" placeholder="身份证号码">
+			<span>身份证号码填写错误</span>
+		</div>
+	</div>
+	<script>
+		window.onload = function(){
+			
+			var reg = /\w+((-w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+/;
+				reg.test(str);
+		}
+	</script>
+</body>
+</html>

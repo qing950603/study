@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		window.onload = function(){
+			// document.cookie = 'user=kitty';
+			// alert(document.cookie);
+			var date = new Date();
+			//设置到某一天
+			date.setDate(date.getDate()+10);
+			date.toGMTString();//转成标准的时间字符串
+			console.log(date);
+			document.cookie='user=tom;expires='+date;
+			//取cookie
+			function  getCookie(key){
+				var arr  = document.cookie.split('; ');
+				for(var i=0;i<arr.length;i++){
+					var arr1 = arr[i].split('=');
+					if(arr1[0] == key){
+						return arr1[1];
+					}
+				}
+				return '';
+			}
+		}
+	</script>
+</body>
+</html>

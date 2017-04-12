@@ -1,0 +1,13 @@
+body{
+	background:orange;
+}
+.box{width:100px;height:100px;background:#fff;}
+.btn{
+	display: block;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: blue;
+	color:#fff;
+}
