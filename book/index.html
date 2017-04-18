@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小王子</title>
+	<style>
+		html,body,div,h1,h2,h3,h4,h5,h6,ul,li,span,p,a{
+			padding:0;
+			margin:0;
+		}
+		ul,li{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		#container{
+			width: 416px;
+			overflow: hidden;
+			margin:0 auto;
+			margin-top:50px;
+		}
+		#container #content{
+			width: 400px;
+			margin:0 auto;
+		}
+		#content h3{
+			font-size: 25px;
+			margin-top: 20px;
+		}
+		.intro{
+			height:150px;
+		}
+		.score-btn li{
+			width:10px;
+			height:10px;
+			background:#ffb712;
+			border-radius: 50%;
+			float:left;
+		}
+		.score{
+			font-size: 10px;
+			float:left;
+			margin-left:4px;
+			color:#494949;
+		}
+		.peo-num{
+			margin-left:14px;
+			color:#bcacac;
+			float:left;
+		}
+		.discuss{
+			margin-top: 14px;
+			overflow: hidden;
+		}
+		.intro .intro-con{
+			width:264px;
+			margin-top:19px;
+			line-height: 22px;
+		}
+		.intro{
+			position: relative;
+		}
+		.intro img{
+			position: absolute;
+			top:0;
+			right:0;
+		}
+		.btn{
+			overflow: hidden;
+			margin-top: 8px;
+		}
+		.btn a{
+			display: block;
+			float:left;
+			width:120px;
+			height:34px;
+			color:#ffb712;
+			border:1px solid #ffb712;
+			border-radius: 6px;
+			text-align: center;
+			line-height: 34px;
+		}
+		.read{
+			margin-left:6px;
+			margin-right: 6px;
+		}
+		.con-intro{
+			overflow: hidden;
+			margin-top:34px;
+			position: relative;
+		}
+		.con-intro h5{
+			font-size: 14px;
+			color:#b1aaaa;
+			
+		}
+		.con-intro .drug-text{
+			margin-top: 22px;
+			/*overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp:5;
+			-webkit-box-orient:vertical;
+			font-size: 16px;*/
+		}
+		.con-intro .drug-up{
+			display: none;
+		}
+		.con-intro span{
+			position: absolute;
+			bottom:0;
+			right:40px;
+		}
+		.con-intro .drug-up{
+			right:170px;
+		}
+		.good-book{
+			margin-top: 32px;
+		}
+		.good-book h4{
+			font-size: 14px;
+			color:#b1aaaa;
+			}
+		.book-sty{
+			overflow: hidden;
+			width: 328px;
+		}
+		.book-sty span{
+			background:#f5f5f5;
+			color:#494949;
+			font-size: 14px;
+			padding:8px;
+			border-radius: 10px;
+			margin-right: 10px;
+			margin-top: 10px;
+			display: block;
+			float:left;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="content">
+			<h3>标题</h3>
+			<div class="intro">
+				<div class="discuss">
+					<ul class="score-btn">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul> 
+					<span class="score">评分</span>
+					<h6 class="peo-num">评价人数</h6>
+				</div>
+				<p class="intro-con">人物简介等</p>
+				<img src="images/xwz-medium.jpg" alt="">
+			</div>
+			<div class="btn">
+				<a href="#">想读</a>
+				<a href="#" class="read">在读</a>
+				<a href="#">读过</a>
+			</div>
+			<div class="con-intro">
+				<h5>小王子内容简介</h5>
+				<p class="drug-text">看的见发快递积分看的见番窠倒臼发</p>
+				<p class="drug-toggle">(展开)</p>
+			</div>
+			<div class="good-book">
+				<h4>好书推荐</h4>
+				<div class="book-sty">
+					<span class="books">小王子</span>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$.ajax({
+				type:'GET',
+				url:'json-book.js',
+				dataType:'json',
+				
+				success:function(data){
+					console.log(data);
+					var str='';
+					str +='<div class="container">'+
+						'<div id="content">'+
+							'<h3>'+data.title+'</h3>'+
+							'<div class="intro">'+
+								'<div class="discuss">'+
+									'<ul class="score-btn">'+
+										'<li></li>'+
+										'<li></li>'+
+										'<li></li>'+
+										'<li></li>'+
+										'<li></li>'+
+									'</ul>'+
+									'<span class="score">'+data.rating.average+'</span>'+
+									'<h6 class="peo-num">'+data.id+'人评价</h6>'+
+								'</div>'+
+								'<p class="intro-con">'+data.author+'/'+data.translator+data.publisher+'/'+data.pages+'页'+'/'+data.binding+'/'+data.price+'/'+data.pubdate+'</p>'+
+								'<img src="'+data.image+'" alt="">'+
+							'</div>'+
+							'<div class="btn">'+
+								'<a href="#">想读</a>'+
+								'<a href="#" class="read">在读</a>'+
+								'<a href="#">读过</a>'+
+							'</div>'+
+							'<div class="con-intro">'+
+								'<h5>小王子的内容简介</h5>'+
+								'<p class="drug-text">'+data.summary+
+								'</p>'+
+								'<span class="drug-toggle">(展开)</span>'+
+								'<span class="drug-up">(收起)</span>'+
+							'</div>'+
+							'<div class="good-book">'+
+								'<h4>查看更多豆瓣高分好书</h4>'+
+								'<div class="book-sty">'+
+								'</div>'+
+							'</div>'+
+						'</div>'+
+						
+					'</div>'
+					var con=$('#content');
+					con.html(str);
+					$.each(data.tags,function(i,item){
+					     var a= $(".book-sty");
+					     $(".book-sty").append('<span>'+item.name+'</span>');
+					 });
+					function processStr(str,n){  
+					    var l = str.length;  
+					    if(l<=n) return str;  
+					    return str.slice(0,n-3)+"...";  
+					 
+					}  
+					$('.drug-text').html(processStr(data.summary,127)); 
+					$('.drug-toggle').click(function(){
+						$('.drug-text').html(processStr(data.summary,data.summary.length)); 
+						$('.drug-toggle').hide();
+						$('.drug-up').show();
+					})
+					$('.drug-up').click(function(){
+						$('.drug-text').html(processStr(data.summary,127));
+						$('.drug-toggle').show();
+						$('.drug-up').hide();
+					})
+					   
+			}
+			});
+		});
+	</script>
+</body>
+</html>
