@@ -1,0 +1,291 @@
+
+html,body,div,ul,li,img,a,span,p,h1,h2,h3,h4,h5,h6{
+	margin:0;
+	padding:0;
+	font-family: "微软雅黑";
+}
+html{font-size:20px;}
+a{
+	text-decoration: none;
+	color:#fff;
+}
+/*头部*/
+.header{
+	width:100%;
+	height:3.3rem;
+	background:#1b1b1f;
+	color:#fff;
+	position: relative;
+	overflow: hidden;
+
+}
+
+.nav{
+	width:100%;
+	height:0.8rem;
+	background:#f4f4f4;
+}
+.header .left{
+	position: absolute;
+	line-height: 3.3rem;
+	left:1rem;
+	top:0.6rem;
+}
+.header .left>img{
+	width:0.95rem;
+	height:1.7rem;
+	float:left;
+	margin-top:0.2rem;
+}
+.header .right>img{
+	width:2rem;
+	height:0.85rem;
+}
+.header .center{
+	display: block;
+	width:6rem;
+	height:2rem;
+	line-height: 3.3rem;
+	margin:0 auto;
+}
+.header .left a{
+	float:left;
+	font-size:1.2rem;
+	font-weight: bold;
+	margin:-0.6rem 0 0 0.2rem;
+
+}
+
+.header .center span{
+	font-size: 1.4rem;
+	font-weight: bold;
+/*	display: inline-block;*/
+}
+.header .right{
+	position: absolute;
+	line-height: 3.3rem;
+	right:1.4rem;
+	top:0.25rem;
+}
+/*主页头部*/
+.headMain{
+	width:100%;
+	height:4.3rem;
+	background:#d01922;
+	color:#fff;
+	overflow: hidden;
+	
+}
+
+.headMain img{
+	width:0.95rem;
+	height:1.6rem;
+	float:left;
+	margin-top:1.4rem;
+	margin-left:1rem;
+}
+.headMain p{
+	font-weight: bold;
+	font-size: 1.6rem;
+	margin:0 auto;
+	width:15rem;
+	height:3rem;
+	line-height: 4.3rem;
+	
+}
+/*内容*/
+
+.content{
+	width:100%;
+	overflow: hidden;
+}
+.content h2{
+	font-size: 1.2rem;
+	color:#777777;
+	margin-top:1.45rem;
+	margin-bottom: 1.45rem;
+	margin-left:1rem;
+}
+.content>img{
+	display: block;
+	width:95%;
+	height:54%;
+	margin:0 auto;
+}
+.content p{
+	color:#606060;
+	margin-left:0.8rem;
+	margin-top:0.85rem;
+	font-size: 1.1rem;
+	margin-bottom: 0.85rem;
+}
+.content .content-read{
+	margin-bottom: 3.2rem;
+}
+.content .content-read h3{
+	float:left;
+	color:#b4b4b4;
+	font-size: 0.9rem;
+	margin-left:0.8rem;
+}
+
+.content .content-read .see{
+	float:right;
+	margin-right:1.5rem;
+}
+.content-read .see img{
+	width:1.1rem;
+	height:0.75rem;
+}
+.content-read .see span{
+	color:#b4b4b4;
+	font-size: 0.9rem;
+}
+
+
+
+/*完善个人信息*/
+/*1.登录*/
+.ct{
+	display: flex;
+	flex-direction: row;
+	color:#fff;
+	font-size: 1.3rem;
+}
+
+.ct #login-btn{
+	flex:1;
+	height:3rem;
+	background:orange;
+	text-align: center;
+	line-height: 3rem;
+}
+.ct #person{
+	flex:1;
+	background:red;
+	height:3rem;
+	text-align: center;
+	line-height: 3rem;
+}
+/*遮罩层*/
+#layer{
+	width:100%;
+	height:50rem;
+	background:rgba(145,142,142,0.5);
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+
+}
+/*登录界面*/
+#login-box{
+	width:25.2rem;
+	height:25.2rem;
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	background:#fff;
+	border-radius: 1rem;
+}
+.login-con{
+	width:25.2rem;
+	height:25.2rem;
+	border-radius:1rem;
+}
+.login-con .person-mess{
+	border-top-left-radius: 1rem;
+	border-top-right-radius: 1rem;
+	background:#f7f7f7;
+	position: relative;
+}
+.login-con .person-mess .title{
+	font-size: 1.45rem;
+	text-align: center;
+	height:3.85rem;
+	line-height:3.85rem;
+	color:#575757;
+}
+/*关闭按钮*/
+.login-con img{
+	width:1.2rem;
+	height:1.2rem;
+	position: absolute;
+	top:1.4rem;
+	right:1.4rem;
+}
+.login-con #yan{
+	border-right:0.02rem solid #d1d1d1;
+}
+.login-con label{
+	display: block;
+	color:#d1d1d1;
+	width:20rem;
+	margin:0 auto;
+	border-bottom:0.05rem solid #d1d1d1;
+	padding:1rem 1rem;
+	font-size: 1.2rem;
+}
+.login-con label input{
+	width:12rem;
+	border:none;
+	outline: none;
+	font-size: 1.2rem;
+}
+.login-con label span a{
+	margin-left:1.2rem; 
+	color:#d01922;
+}
+.login-con form>input{
+	display: block;
+	border:0;
+	padding:0;
+	width:19rem;
+	height:2.6rem;
+	text-align: center;
+	line-height: 2.6rem;
+	color:#fff;
+	font-size:1.2rem;
+	margin:0 auto;
+	margin-top:2rem;
+	background:#d01922;
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+/*完善个人信息*/
+.personMe{
+	position: relative;
+	width:25.35rem;
+	height:8.9rem;
+	border-top-left-radius: 1rem;
+	border-top-right-radius: 1rem;
+	background-size:100% 100%;
+	background:url(../images/person-bg.jpg) no-repeat center center;
+}
+.personMe .title{
+	font-size: 1.45rem;
+	text-align: center;
+	height:3.85rem;
+	line-height:8.9rem;
+	color:#fff;
+
+}
+#person-box{
+	width:25.35rem;
+	height:31.5rem;
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	background:#fff;
+	border-radius: 1rem;
+}
+.login-con .personMe img{
+	width:1.75rem;
+	height:1.5rem;
+	position: absolute;
+	top:1.8rem;
+	right:1.8rem;
+}

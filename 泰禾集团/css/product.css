@@ -1,0 +1,51 @@
+/*泰禾集团房地产产品*/
+
+.pro-content{
+	width:100%;
+	border-bottom:1px solid #e8e8e8;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+}
+.proLeft{
+	margin-top: 1.3rem;
+	margin-bottom:1.3rem;
+	float:left;
+	margin-left: 0.8rem;
+	flex:1;
+	overflow: hidden;
+}
+.proLeft img{
+	width:10.6rem;
+	height:8rem;
+	clear:both;
+	
+}
+.proRight{
+	float:right;
+	flex:2;
+	clear:both;
+	margin-left:0.7rem;
+	height:8rem;
+
+}
+.proRight h4{
+	font-size: 1.3rem;
+	color:#010101;
+	padding-top:1.4rem;
+}
+.proRight p{
+	font-size: 1rem;
+	color:#bcbcbc;	
+	padding-top:0.7rem;
+	margin-bottom: 0.8rem;
+
+}
+.proRight span{
+	color:#7a7a7a;
+	padding:0.45rem 0.65rem;
+	background:#f0f3f5;
+	/*margin-right:0.18rem;*/
+	font-size: 1rem;
+}

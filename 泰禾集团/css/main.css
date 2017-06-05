@@ -1,0 +1,201 @@
+/*泰禾集团详情*/
+.con{
+	width:100%;
+	overflow: hidden;
+	border-bottom:1px solid #e8e8e8;
+}
+.conOne{
+	width:94%;
+	margin:0 auto;
+}
+.conOne h4{
+	font-size: 1.9rem;
+	margin-top:2rem;
+}
+.conNav{
+	margin-top:0.7rem;
+	overflow: hidden;
+}
+.conNav>span{
+	width:4rem;
+	height:1.7rem;
+	display: block;
+	border:1px solid #a4a4a4;
+	border-radius:1rem;
+	text-align:center;
+	line-height: 1.7rem;
+	color:#a4a4a4;
+	font-size: 1.2rem;
+	float:left;
+}
+.conNav>p{
+	float:left;
+	font-size: 1.24rem;
+	margin-top:0.1rem;
+	color:#999999;
+	margin-left:1rem;
+}
+.conNav a{
+	float:left;
+	color:#7993b3;
+	margin-top:0.3rem;
+}
+.care{
+	overflow: hidden;
+}
+.care .careSan{
+	float:right;
+	width:0;
+	height:0;
+	border: 0.6rem solid transparent;  
+	border-bottom: 1.1rem solid #ea5414; 
+	margin-right:0.6rem;
+	margin-top:0.2rem;
+}
+
+.conOne .care>h4{
+	float:right;
+	font-size: 1.2rem;
+	color:#393939;
+	margin-top:0.6rem;
+
+}
+.conOne>img{
+	width:100%;
+	height:16%;
+	margin-top:1.7rem;
+}
+.name{
+	overflow: hidden;
+	margin-top:1.2rem;
+	margin-bottom: 1.2rem;
+}
+.name h5{
+	font-size:1.3rem;
+	float:left;
+	
+}
+.name a{
+	font-size: 0.9rem;
+	color:#7993b3;
+	float:right;
+	margin-top:0.2rem;
+}
+
+/*均价10万元/平米*/
+.conTwo{
+	width:94%;
+	margin:0 auto;
+	overflow: hidden;
+}
+.TwoTitle{
+	overflow: hidden;
+	margin-top: 1.65rem;
+}
+.conTwo .TwoTitle h3{
+	font-size: 1.4rem;
+	float:left;
+	color:#d90c0d;
+}
+.conTwo .TwoTitle img{
+	width:1.65rem;
+	height:1.5rem;
+	float:left;
+	margin-left:1rem;
+	margin-top: 0.2rem;
+}
+.conTwo p{
+	margin-top: 1.4rem;
+	color:#2d2d2d;
+}
+.spanB{
+	margin-top:1.8rem;
+	margin-bottom: 1.8rem;
+	overflow: hidden;
+
+}
+.spanB span{
+	padding:0.35rem 0.65rem;
+	background:#f1f1f1;
+	margin-right: 0.5rem;
+}
+.end{
+	margin:0 auto;
+	margin-top:5rem;
+	text-align: center;
+	overflow: hidden;
+	margin-bottom: 2.4rem;
+}
+.end img{
+	width:6.6rem;
+	height:0.3rem;
+}
+.end>span{
+	font-size:1.2rem;
+	margin-top:8rem;
+}
+.conTwo p.pEnd{
+	text-align: center;
+	margin-top:1rem;
+}
+.conTwo .endImg{
+	text-align: center;
+}
+.endImg img{
+	width:7.45rem;
+	height:8rem;
+	margin-top:3rem;
+	margin-bottom: 3.5rem;
+	margin-right: 1.6rem;
+}
+.conThree{
+	width: 100%;
+	height:3.8rem;
+	display: flex;
+	flex-direction: row;
+	line-height: 3.8rem;
+	color:#fff;
+	font-size:1.2rem;
+	overflow: hidden;
+}
+.conThree .link1{
+
+	flex:1;
+	background:#d01922;
+	box-sizing: border-box;
+	margin:0 auto;
+	background:#f1851a;
+	/*background:#f1851a url(../images/con-img5.jpg) no-repeat 4rem center;*/
+}
+.conThree .link2{
+	background: #d01922;
+}
+
+.conThree .link1 .linkcon{
+	width: 6.8rem;
+	margin:0 auto;
+	/*background: green;*/
+	overflow: hidden;
+	text-align: center;
+}
+
+
+.conThree .linkcon img{
+	display: inline-block;
+	float: left;
+	width:1.8rem;
+	height: 1.7rem;
+	margin: 1rem auto;
+	box-sizing: border-box;
+	
+}
+
+.conThree .linkcon span{
+	display: inline-block ;
+	float: left;
+	width: 5rem;
+	margin: 0 auto;
+	text-align: center;
+/*	background: blue;
+*/
+}
