@@ -1,0 +1,12 @@
+.btn{
+	background:red;
+	border:none;
+	display: block;
+	
+}
+.btn-xs{
+	width:150px;
+	height:50px;
+	font-size: 30px;
+	border:5px solid green;
+}
