@@ -1,0 +1,11 @@
+.content{
+	vertical-align: top;
+	min-width: 330px;
+	max-width: 330px;
+	min-height: 160px;
+	max-height: 160px;
+}
+.con{
+	width:330px;
+	height:30px;
+}

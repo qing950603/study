@@ -1,0 +1,21 @@
+.tab-bar{
+	/*position: fixed;*/
+	/*left:0;*/
+	/*bottom:0;*/
+	height:40px;
+	width:100%;
+	
+
+}
+.flex-wrap1{
+	width:490px;
+	margin:0 auto;
+	display: flex;
+	text-align: center;
+}
+.flex-1{
+	flex:1;
+}
+.tab-bar span{
+	display: block;
+}

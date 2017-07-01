@@ -1,0 +1,13 @@
+.btn{
+	display:block;
+	background:#06ecfe;
+	border:none;
+	color:#fff;
+
+}
+.btn-xs{
+	width:84px;
+	height:53px;
+	font-size:20px;
+	margin-left:320px;
+}
